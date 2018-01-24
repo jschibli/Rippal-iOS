@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B8E65DFC22D78B681A155A /* Pods_RippalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */; };
 		764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDEF20170E0600F179AE /* AppDelegate.swift */; };
 		764ECDF220170E0600F179AE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF120170E0600F179AE /* FirstViewController.swift */; };
 		764ECDF420170E0600F179AE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF320170E0600F179AE /* SecondViewController.swift */; };
@@ -15,6 +16,8 @@
 		764ECDFC20170E0600F179AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */; };
 		764ECE0720170E0600F179AE /* RippalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECE0620170E0600F179AE /* RippalTests.swift */; };
 		764ECE1220170E0600F179AE /* RippalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECE1120170E0600F179AE /* RippalUITests.swift */; };
+		EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87312F22011E9652CC24F7A /* Pods_Rippal.framework */; };
+		F6F66DC44F0D99A75840B074 /* Pods_RippalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEC20170E0600F179AE /* Rippal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rippal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEF20170E0600F179AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		764ECDF120170E0600F179AE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		764ECE0D20170E0600F179AE /* RippalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RippalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECE1120170E0600F179AE /* RippalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippalUITests.swift; sourceTree = "<group>"; };
 		764ECE1320170E0600F179AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87312F22011E9652CC24F7A /* Pods_Rippal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rippal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A88B5F8E0C8930B1AAC4F715 /* Pods-RippalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8FFD1B5E8AF06D26AEDE9F2 /* Pods-Rippal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rippal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rippal/Pods-Rippal.debug.xcconfig"; sourceTree = "<group>"; };
+		CEF725F2B598CDF7A71B7700 /* Pods-Rippal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rippal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rippal/Pods-Rippal.release.xcconfig"; sourceTree = "<group>"; };
+		E5723579D6358A8A77D39D16 /* Pods-RippalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RippalTests/Pods-RippalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0755137CD3FAAFA2A5569D7 /* Pods-RippalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalTests/Pods-RippalTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F66DC44F0D99A75840B074 /* Pods_RippalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B8E65DFC22D78B681A155A /* Pods_RippalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				764ECE0520170E0600F179AE /* RippalTests */,
 				764ECE1020170E0600F179AE /* RippalUITests */,
 				764ECDED20170E0600F179AE /* Products */,
+				D1C28A83E6529AA5FDFADECA /* Pods */,
+				C9BB852C04944468AD2347B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = RippalUITests;
 			sourceTree = "<group>";
 		};
+		C9BB852C04944468AD2347B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A87312F22011E9652CC24F7A /* Pods_Rippal.framework */,
+				2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */,
+				9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1C28A83E6529AA5FDFADECA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8FFD1B5E8AF06D26AEDE9F2 /* Pods-Rippal.debug.xcconfig */,
+				CEF725F2B598CDF7A71B7700 /* Pods-Rippal.release.xcconfig */,
+				E5723579D6358A8A77D39D16 /* Pods-RippalTests.debug.xcconfig */,
+				F0755137CD3FAAFA2A5569D7 /* Pods-RippalTests.release.xcconfig */,
+				A88B5F8E0C8930B1AAC4F715 /* Pods-RippalUITests.debug.xcconfig */,
+				8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 764ECE1620170E0600F179AE /* Build configuration list for PBXNativeTarget "Rippal" */;
 			buildPhases = (
+				0306E3B1062CE5F540177341 /* [CP] Check Pods Manifest.lock */,
 				764ECDE820170E0600F179AE /* Sources */,
 				764ECDE920170E0600F179AE /* Frameworks */,
 				764ECDEA20170E0600F179AE /* Resources */,
+				416CDADB9F2140B3A73C1AA7 /* [CP] Embed Pods Frameworks */,
+				BB9A853B443A5C04F7CEB05B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 764ECE1920170E0600F179AE /* Build configuration list for PBXNativeTarget "RippalTests" */;
 			buildPhases = (
+				0D5B4424EFCB2FE5BB2AD3CE /* [CP] Check Pods Manifest.lock */,
 				764ECDFE20170E0600F179AE /* Sources */,
 				764ECDFF20170E0600F179AE /* Frameworks */,
 				764ECE0020170E0600F179AE /* Resources */,
+				D939B4339E03A866958E7C97 /* [CP] Embed Pods Frameworks */,
+				BABF03ED7FEC3011F1A7888A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 764ECE1C20170E0600F179AE /* Build configuration list for PBXNativeTarget "RippalUITests" */;
 			buildPhases = (
+				A481D88F9EADFB94D7BB8773 /* [CP] Check Pods Manifest.lock */,
 				764ECE0920170E0600F179AE /* Sources */,
 				764ECE0A20170E0600F179AE /* Frameworks */,
 				764ECE0B20170E0600F179AE /* Resources */,
+				29165DAC492985B396C48A95 /* [CP] Embed Pods Frameworks */,
+				ACCCD64365EC70939A670087 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,156 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0306E3B1062CE5F540177341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rippal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D5B4424EFCB2FE5BB2AD3CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RippalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29165DAC492985B396C48A95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416CDADB9F2140B3A73C1AA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rippal/Pods-Rippal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rippal/Pods-Rippal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A481D88F9EADFB94D7BB8773 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RippalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACCCD64365EC70939A670087 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BABF03ED7FEC3011F1A7888A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RippalTests/Pods-RippalTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB9A853B443A5C04F7CEB05B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rippal/Pods-Rippal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D939B4339E03A866958E7C97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RippalTests/Pods-RippalTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		764ECDE820170E0600F179AE /* Sources */ = {
@@ -428,6 +627,7 @@
 		};
 		764ECE1720170E0600F179AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8FFD1B5E8AF06D26AEDE9F2 /* Pods-Rippal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +643,7 @@
 		};
 		764ECE1820170E0600F179AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEF725F2B598CDF7A71B7700 /* Pods-Rippal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +659,7 @@
 		};
 		764ECE1A20170E0600F179AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5723579D6358A8A77D39D16 /* Pods-RippalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +677,7 @@
 		};
 		764ECE1B20170E0600F179AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0755137CD3FAAFA2A5569D7 /* Pods-RippalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +695,7 @@
 		};
 		764ECE1D20170E0600F179AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A88B5F8E0C8930B1AAC4F715 /* Pods-RippalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +712,7 @@
 		};
 		764ECE1E20170E0600F179AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
