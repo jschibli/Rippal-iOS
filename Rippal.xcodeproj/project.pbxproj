@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		17B8E65DFC22D78B681A155A /* Pods_RippalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */; };
 		764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDEF20170E0600F179AE /* AppDelegate.swift */; };
-		764ECDF220170E0600F179AE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF120170E0600F179AE /* FirstViewController.swift */; };
-		764ECDF420170E0600F179AE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF320170E0600F179AE /* SecondViewController.swift */; };
+		764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF120170E0600F179AE /* HomeViewController.swift */; };
+		764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF320170E0600F179AE /* ExploreViewController.swift */; };
 		764ECDF720170E0600F179AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764ECDF520170E0600F179AE /* Main.storyboard */; };
 		764ECDF920170E0600F179AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764ECDF820170E0600F179AE /* Assets.xcassets */; };
 		764ECDFC20170E0600F179AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */; };
 		764ECE0720170E0600F179AE /* RippalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECE0620170E0600F179AE /* RippalTests.swift */; };
 		764ECE1220170E0600F179AE /* RippalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECE1120170E0600F179AE /* RippalUITests.swift */; };
+		76688F692019932300C794F5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F682019932300C794F5 /* CalendarViewController.swift */; };
+		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87312F22011E9652CC24F7A /* Pods_Rippal.framework */; };
 		F6F66DC44F0D99A75840B074 /* Pods_RippalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,8 +43,8 @@
 		2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEC20170E0600F179AE /* Rippal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rippal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEF20170E0600F179AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		764ECDF120170E0600F179AE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		764ECDF320170E0600F179AE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		764ECDF120170E0600F179AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		764ECDF320170E0600F179AE /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		764ECDF620170E0600F179AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		764ECDF820170E0600F179AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764ECDFB20170E0600F179AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		764ECE0D20170E0600F179AE /* RippalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RippalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECE1120170E0600F179AE /* RippalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippalUITests.swift; sourceTree = "<group>"; };
 		764ECE1320170E0600F179AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76688F682019932300C794F5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87312F22011E9652CC24F7A /* Pods_Rippal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rippal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				764ECDEF20170E0600F179AE /* AppDelegate.swift */,
-				764ECDF120170E0600F179AE /* FirstViewController.swift */,
-				764ECDF320170E0600F179AE /* SecondViewController.swift */,
+				764ECDF120170E0600F179AE /* HomeViewController.swift */,
+				764ECDF320170E0600F179AE /* ExploreViewController.swift */,
+				76688F682019932300C794F5 /* CalendarViewController.swift */,
+				76688F6A2019933400C794F5 /* ProfileViewController.swift */,
 				764ECDF520170E0600F179AE /* Main.storyboard */,
 				764ECDF820170E0600F179AE /* Assets.xcassets */,
 				764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */,
@@ -461,9 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				764ECDF420170E0600F179AE /* SecondViewController.swift in Sources */,
+				76688F692019932300C794F5 /* CalendarViewController.swift in Sources */,
+				764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */,
+				76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */,
 				764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */,
-				764ECDF220170E0600F179AE /* FirstViewController.swift in Sources */,
+				764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,11 +641,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ESTDL6E7Z;
 				INFOPLIST_FILE = Rippal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.midd.Rippal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -649,11 +658,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ESTDL6E7Z;
 				INFOPLIST_FILE = Rippal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.midd.Rippal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
