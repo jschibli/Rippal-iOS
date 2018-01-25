@@ -19,6 +19,7 @@
 		76688F692019932300C794F5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F682019932300C794F5 /* CalendarViewController.swift */; };
 		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6C2019A15B00C794F5 /* LoginViewController.swift */; };
+		76688F6F2019B44400C794F5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76688F6E2019B44400C794F5 /* keys.plist */; };
 		EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87312F22011E9652CC24F7A /* Pods_Rippal.framework */; };
 		F6F66DC44F0D99A75840B074 /* Pods_RippalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		76688F682019932300C794F5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76688F6C2019A15B00C794F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76688F6E2019B44400C794F5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87312F22011E9652CC24F7A /* Pods_Rippal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rippal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				764ECDF820170E0600F179AE /* Assets.xcassets */,
 				764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */,
 				764ECDFD20170E0600F179AE /* Info.plist */,
+				76688F6E2019B44400C794F5 /* keys.plist */,
 			);
 			path = Rippal;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76688F6F2019B44400C794F5 /* keys.plist in Resources */,
 				764ECDFC20170E0600F179AE /* LaunchScreen.storyboard in Resources */,
 				764ECDF920170E0600F179AE /* Assets.xcassets in Resources */,
 				764ECDF720170E0600F179AE /* Main.storyboard in Resources */,

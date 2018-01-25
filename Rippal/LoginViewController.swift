@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "sw_login_tab", sender: self)
+//        performSegue(withIdentifier: "sw_login_tab", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
