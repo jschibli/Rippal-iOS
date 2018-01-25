@@ -1,5 +1,5 @@
 //
-//  CalendarViewController.swift
+//  ProfileViewController.swift
 //  Rippal
 //
 //  Created by Tao Wang on 1/24/18.
@@ -12,7 +12,10 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // TODO: remove
+        NSLog("ProfileView Loaded")
+        
     }
     
     override func didReceiveMemoryWarning() {

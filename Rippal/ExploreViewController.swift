@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ExploreViewController.swift
 //  Rippal
 //
 //  Created by Tao Wang on 1/23/18.
@@ -12,7 +12,10 @@ class ExploreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // TODO: remove
+        NSLog("ExploreView Loaded")
+        
     }
 
     override func didReceiveMemoryWarning() {
