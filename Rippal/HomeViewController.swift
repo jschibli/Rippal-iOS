@@ -10,12 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // Mark: Controls
+    @IBOutlet weak var cityImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // TODO: remove
         NSLog("HomeView Loaded")
-        
         
     }
 

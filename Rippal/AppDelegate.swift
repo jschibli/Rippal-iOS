@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let initialViewController:UIViewController
         // TODO: use the plist value
-        if preferences.bool(forKey: "logged_in") {
+        // TODO: currently hardcoded to true
+        if preferences.bool(forKey: "logged_in") || true {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")
