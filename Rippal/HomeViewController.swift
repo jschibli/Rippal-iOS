@@ -12,6 +12,9 @@ class HomeViewController: UIViewController {
 
     // Mark: Controls
     @IBOutlet weak var cityImage: UIImageView!
+    @IBOutlet weak var cityName: UITextView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
