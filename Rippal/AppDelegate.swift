@@ -13,19 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         // Determine whether to go to login screen or home screen
-        let preferences = UserDefaults.standard
-        
         let initialViewController:UIViewController
-        // TODO: use the plist value
         // TODO: currently hardcoded to true
-        if preferences.bool(forKey: "logged_in") || true {
+        if UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_logged_in")!) || true {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")

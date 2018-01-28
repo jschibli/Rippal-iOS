@@ -11,6 +11,8 @@
 		760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DB8201B1D5900145870 /* ExploreCollectionViewCell.swift */; };
 		760D7DBC201BB20600145870 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBB201BB20600145870 /* City.swift */; };
 		760D7DBE201BB2D500145870 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBD201BB2D500145870 /* DataStore.swift */; };
+		760D7DC0201D350300145870 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBF201D350300145870 /* Connection.swift */; };
+		760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DC1201D3A2E00145870 /* TabBarController.swift */; };
 		764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDEF20170E0600F179AE /* AppDelegate.swift */; };
 		764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF120170E0600F179AE /* HomeViewController.swift */; };
 		764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF320170E0600F179AE /* ExploreViewController.swift */; };
@@ -23,6 +25,8 @@
 		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6C2019A15B00C794F5 /* LoginViewController.swift */; };
 		76688F6F2019B44400C794F5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76688F6E2019B44400C794F5 /* keys.plist */; };
+		76BD0A08201D416F0003480C /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A07201D416F0003480C /* StringHelper.swift */; };
+		76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A09201D4B8B0003480C /* NotificationHelper.swift */; };
 		EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87312F22011E9652CC24F7A /* Pods_Rippal.framework */; };
 		F6F66DC44F0D99A75840B074 /* Pods_RippalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C58FB79694F9C35A5371EB8 /* Pods_RippalTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +53,8 @@
 		760D7DB8201B1D5900145870 /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
 		760D7DBB201BB20600145870 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		760D7DBD201BB2D500145870 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		760D7DBF201D350300145870 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		760D7DC1201D3A2E00145870 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		764ECDEC20170E0600F179AE /* Rippal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rippal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEF20170E0600F179AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		764ECDF120170E0600F179AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76688F6C2019A15B00C794F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76688F6E2019B44400C794F5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		76BD0A07201D416F0003480C /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		76BD0A09201D4B8B0003480C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EF9354EA587752296060E41 /* Pods_RippalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RippalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87312F22011E9652CC24F7A /* Pods_Rippal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rippal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				760D7DBB201BB20600145870 /* City.swift */,
+				760D7DBF201D350300145870 /* Connection.swift */,
 				760D7DBD201BB2D500145870 /* DataStore.swift */,
 			);
 			path = Data;
@@ -148,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				764ECDEF20170E0600F179AE /* AppDelegate.swift */,
+				760D7DC1201D3A2E00145870 /* TabBarController.swift */,
 				76688F6C2019A15B00C794F5 /* LoginViewController.swift */,
 				764ECDF120170E0600F179AE /* HomeViewController.swift */,
 				764ECDF320170E0600F179AE /* ExploreViewController.swift */,
@@ -155,6 +165,7 @@
 				76688F6A2019933400C794F5 /* ProfileViewController.swift */,
 				760D7DB7201B1D2E00145870 /* Cells */,
 				760D7DBA201BB1F000145870 /* Data */,
+				76BD0A06201D411E0003480C /* Utils */,
 				764ECDF520170E0600F179AE /* Main.storyboard */,
 				764ECDF820170E0600F179AE /* Assets.xcassets */,
 				764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */,
@@ -180,6 +191,15 @@
 				764ECE1320170E0600F179AE /* Info.plist */,
 			);
 			path = RippalUITests;
+			sourceTree = "<group>";
+		};
+		76BD0A06201D411E0003480C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				76BD0A07201D416F0003480C /* StringHelper.swift */,
+				76BD0A09201D4B8B0003480C /* NotificationHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C9BB852C04944468AD2347B1 /* Frameworks */ = {
@@ -499,13 +519,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BD0A08201D416F0003480C /* StringHelper.swift in Sources */,
 				76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */,
 				760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */,
+				760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */,
 				76688F692019932300C794F5 /* CalendarViewController.swift in Sources */,
 				764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */,
+				76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */,
 				76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */,
 				764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */,
 				760D7DBC201BB20600145870 /* City.swift in Sources */,
+				760D7DC0201D350300145870 /* Connection.swift in Sources */,
 				760D7DBE201BB2D500145870 /* DataStore.swift in Sources */,
 				764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */,
 			);

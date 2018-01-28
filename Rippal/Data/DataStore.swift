@@ -15,9 +15,9 @@ final class DataStore {
     fileprivate init() {}
     
     var cities: [City] = []
-    // TODO: same thing for connections
+    var connections: [Connection] = []
     
-    // Pulls from local and updates
+    // Pulls from saved connections and updates
     func loadCities(completion: @escaping () -> Void) {
         // TODO: pull up locally saved cities
         
@@ -25,5 +25,12 @@ final class DataStore {
         
         
         completion()
+    }
+    
+    // Pulls from saved connections and updates
+    func loadConnections(completion: @escaping () -> Void) {
+        // TODO: pull up locally saved connections
+        
+        // TODO: check for current location if permission given and refresh city list
     }
 }
