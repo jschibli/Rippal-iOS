@@ -6,6 +6,7 @@
 //  Copyright © 2018 Rippal. All rights reserved.
 //
 
+import CoreLocation
 import UIKit
 
 @UIApplicationMain
@@ -47,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        if UIApplication.shared.isIgnoringInteractionEvents && (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            // Restart all functionalities if location permission given
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

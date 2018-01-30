@@ -30,11 +30,12 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         case .restricted, .denied:
             // Restricted
             locationManager.requestWhenInUseAuthorization()
+            determineToEscalateLocationPermission()
             // TODO: disable other operations until user allows location permission
             break
         case .authorizedWhenInUse:
             // When in use
-            determineToEscalatePermission()
+            determineToEscalateLocationPermission()
             break
         default:    // .authorizedAlways
             // Always
@@ -42,12 +43,33 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         }
     }
     
-    func determineToEscalatePermission() {
-        // TODO: check if asked already
+    func determineToEscalateLocationPermission() {
+        // No location permission given
+        if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied {
+            var actions: [UIAlertAction] = [];
+            // TODO: localization for the notification
+            actions.append(UIAlertAction(title: "Go to Settings", style: .`default`) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, options: [:], completionHandler: { (_) in
+                        // Exit application
+                        NotificationHelper.sharedInstance.showAlert(title: "Need location permission", message: "Please enable location permission for basic Rippal functionalities", actions: actions, context: self.selectedViewController!)
+                        // Stop all functionalities
+                        UIApplication.shared.beginIgnoringInteractionEvents()
+                    })
+                }
+            })
+            NotificationHelper.sharedInstance.showAlert(title: "Need location permission", message: "Please enable location permission for basic Rippal functionalities", actions: actions, context: self.selectedViewController!)
+        }
+        
+        // Already granted "When In Use" permission
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            NSLog("Authorized when in use")
-            NSLog(UserDefaults.standard.bool(forKey: "userdefaults_asked_always").description)
-            if UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_asked_always")!) {
+            if UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_asked_always")!) &&
+                !UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_notified_always")!) {
+                // Have asked but have not notified
                 var actions: [UIAlertAction] = [];
                 // TODO: localization for the notification
                 actions.append(UIAlertAction(title: "Got it", style: .`default`, handler: nil))
@@ -61,6 +83,7 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
                     }
                 })
                 NotificationHelper.sharedInstance.showAlert(title: "Need location permission", message: "Please enable location permission in 'Settings', or Rippal cannot function properly", actions: actions, context: self.selectedViewController!)
+                UserDefaults.standard.set(true, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_notified_always")!)    // Already notified
             } else {
                 locationManager.requestAlwaysAuthorization()
                 UserDefaults.standard.set(true, forKey: StringHelper.sharedInstance.getKey(key: 
