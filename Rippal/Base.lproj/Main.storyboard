@@ -210,6 +210,7 @@
                     <tabBarItem key="tabBarItem" title="Explore" image="tb_explore" id="cPa-gy-q4n" userLabel="Explore"/>
                     <connections>
                         <outlet property="collectionView" destination="lDU-nW-ZT9" id="afm-RG-KTq"/>
+                        <outlet property="dateShown" destination="8W7-Bi-VNf" id="e95-tl-87m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

@@ -25,6 +25,7 @@
 		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6C2019A15B00C794F5 /* LoginViewController.swift */; };
 		76688F6F2019B44400C794F5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76688F6E2019B44400C794F5 /* keys.plist */; };
+		76B94C0020203C8F00F52014 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B94BFF20203C8F00F52014 /* DateHelper.swift */; };
 		76BD0A08201D416F0003480C /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A07201D416F0003480C /* StringHelper.swift */; };
 		76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A09201D4B8B0003480C /* NotificationHelper.swift */; };
 		EE054BB02B485638AA553B68 /* Pods_Rippal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87312F22011E9652CC24F7A /* Pods_Rippal.framework */; };
@@ -73,6 +74,7 @@
 		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76688F6C2019A15B00C794F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76688F6E2019B44400C794F5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		76B94BFF20203C8F00F52014 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		76BD0A07201D416F0003480C /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		76BD0A09201D4B8B0003480C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		8E50D0630EB93DB1C1C354B2 /* Pods-RippalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RippalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RippalUITests/Pods-RippalUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,8 +198,9 @@
 		76BD0A06201D411E0003480C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				76BD0A07201D416F0003480C /* StringHelper.swift */,
+				76B94BFF20203C8F00F52014 /* DateHelper.swift */,
 				76BD0A09201D4B8B0003480C /* NotificationHelper.swift */,
+				76BD0A07201D416F0003480C /* StringHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */,
 				760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */,
 				76688F692019932300C794F5 /* CalendarViewController.swift in Sources */,
+				76B94C0020203C8F00F52014 /* DateHelper.swift in Sources */,
 				764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */,
 				76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */,
 				76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */,

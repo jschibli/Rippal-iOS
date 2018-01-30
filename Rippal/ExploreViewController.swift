@@ -11,11 +11,15 @@ import UIKit
 class ExploreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var dateShown: UITextView!
     
     let store = DataStore.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the date to today
+        dateShown.text = DateHelper.sharedInstance.constructExploreDateString(date: Date())
         
         store.cities.append(City(imageUrl: "123", cityName: "City1"))
         store.cities.append(City(imageUrl: "123", cityName: "City2"))
