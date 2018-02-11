@@ -224,16 +224,29 @@
                     <view key="view" contentMode="scaleToFill" id="egs-zT-88z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twl-vG-jxn">
+                                <rect key="frame" x="119" y="318" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login with LinkedIn">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSignInLinkedInPressed:" destination="CpO-hP-jOV" eventType="touchUpInside" id="lcg-DU-4TG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.46666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="hyQ-a5-Wch"/>
                     </view>
                     <connections>
+                        <outlet property="btnSignInLinkedIn" destination="egs-zT-88z" id="wEg-Ti-Z7d"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="sw_login_tab" id="oh6-GL-NZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF9-vW-FCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="0.0"/>
+            <point key="canvasLocation" x="-932" y="-0.44977511244377816"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="yl2-sM-qoP">

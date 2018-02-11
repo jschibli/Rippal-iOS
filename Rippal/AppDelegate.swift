@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Determine whether to go to login screen or home screen
         let initialViewController:UIViewController
         // TODO: currently hardcoded to true
-        if UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_logged_in")!) || true {
+        if UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_logged_in")!) && false {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")

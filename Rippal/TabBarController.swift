@@ -18,14 +18,21 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    func checkLocationPermission() {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             // Not determined
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization()     // when I know enough about iOS, I'll be able to remove this branch
             break
         case .restricted, .denied:
             // Restricted
