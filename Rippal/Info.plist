@@ -64,5 +64,11 @@
 			</array>
 		</dict>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>linkedin</string>
+		<string>linkedin-sdk</string>
+		<string>linkedin-sdk2</string>
+	</array>
 </dict>
 </plist>

@@ -26,8 +26,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnSignInLinkedInPressed(_ sender: Any) {
-        LISDKSessionManager.createSession(withAuth: [LISDK_FULL_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { returnState -> () in
-            NSLog("LinkedIn success")
+        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { returnState -> () in
+            let session = LISDKSessionManager.sharedInstance().session
+            // TODO:
         },
                                           errorBlock: { error -> () in
                                             var actions: [UIAlertAction] = [];
@@ -37,15 +38,14 @@ class LoginViewController: UIViewController {
                                                 NotificationHelper.sharedInstance.showAlert(title: "Error Signing In", message: "Encountered an unknown error", actions: actions, context: self)
                                                 return
                                             }
+
                                             let error = err as NSError
+                                            print(error)
                                             switch error.code {
                                             case LISDKErrorCode.NETWORK_UNAVAILABLE.hashValue:
                                                 NotificationHelper.sharedInstance.showAlert(title: "Network Unavailable", message: "Encountered error with Internet connection", actions: actions, context: self)
                                                 break
-                                            case LISDKErrorCode.LINKEDIN_APP_NOT_FOUND.hashValue:
-                                                NotificationHelper.sharedInstance.showAlert(title: "LinkedIn App Not Found", message: "Cannot find LinkedIn app on this phone", actions: actions, context: self)
-                                                break
-                                            case LISDKErrorCode.USER_CANCELLED.hashValue:
+                                            case LISDKErrorCode.USER_CANCELLED.hashValue, LISDKErrorCode.LINKEDIN_APP_NOT_FOUND.hashValue:
                                                 // Do nothing
                                                 break
                                             default:
