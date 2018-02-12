@@ -26,6 +26,8 @@
 		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6C2019A15B00C794F5 /* LoginViewController.swift */; };
 		76688F6F2019B44400C794F5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76688F6E2019B44400C794F5 /* keys.plist */; };
+		768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB141203176A800AEAEF0 /* UserHelper.swift */; };
+		768CB1442031788100AEAEF0 /* LinkedInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB1432031788100AEAEF0 /* LinkedInHelper.swift */; };
 		76B94C0020203C8F00F52014 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B94BFF20203C8F00F52014 /* DateHelper.swift */; };
 		76BD0A08201D416F0003480C /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A07201D416F0003480C /* StringHelper.swift */; };
 		76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD0A09201D4B8B0003480C /* NotificationHelper.swift */; };
@@ -77,6 +79,8 @@
 		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76688F6C2019A15B00C794F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76688F6E2019B44400C794F5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		768CB141203176A800AEAEF0 /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
+		768CB1432031788100AEAEF0 /* LinkedInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInHelper.swift; sourceTree = "<group>"; };
 		76B94BFF20203C8F00F52014 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		76BD0A07201D416F0003480C /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		76BD0A09201D4B8B0003480C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				764ECDFD20170E0600F179AE /* Info.plist */,
+				76688F6E2019B44400C794F5 /* keys.plist */,
 				76086F662024654300776417 /* Rippal-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -185,7 +190,6 @@
 				764ECDF520170E0600F179AE /* Main.storyboard */,
 				764ECDF820170E0600F179AE /* Assets.xcassets */,
 				764ECDFA20170E0600F179AE /* LaunchScreen.storyboard */,
-				76688F6E2019B44400C794F5 /* keys.plist */,
 			);
 			path = Rippal;
 			sourceTree = "<group>";
@@ -214,6 +218,8 @@
 				76B94BFF20203C8F00F52014 /* DateHelper.swift */,
 				76BD0A09201D4B8B0003480C /* NotificationHelper.swift */,
 				76BD0A07201D416F0003480C /* StringHelper.swift */,
+				768CB141203176A800AEAEF0 /* UserHelper.swift */,
+				768CB1432031788100AEAEF0 /* LinkedInHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */,
 				760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */,
 				76688F692019932300C794F5 /* CalendarViewController.swift in Sources */,
+				768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */,
 				76B94C0020203C8F00F52014 /* DateHelper.swift in Sources */,
 				764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */,
 				76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */,
@@ -549,6 +556,7 @@
 				764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */,
 				760D7DBC201BB20600145870 /* City.swift in Sources */,
 				760D7DC0201D350300145870 /* Connection.swift in Sources */,
+				768CB1442031788100AEAEF0 /* LinkedInHelper.swift in Sources */,
 				760D7DBE201BB2D500145870 /* DataStore.swift in Sources */,
 				764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */,
 			);

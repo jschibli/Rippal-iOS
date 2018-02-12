@@ -18,11 +18,13 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        
+        // Logging
+        let accessToken = LinkedInHelper.sharedInstance.getAccessToken()
+        NSLog("Access token: %@", accessToken!)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
+    override func viewDidAppear(_ animated: Bool) {}
     
     func checkLocationPermission() {
         if CLLocationManager.authorizationStatus() == .notDetermined {

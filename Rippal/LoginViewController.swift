@@ -26,31 +26,34 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnSignInLinkedInPressed(_ sender: Any) {
-        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { returnState -> () in
-            let session = LISDKSessionManager.sharedInstance().session
-            // TODO:
-        },
-                                          errorBlock: { error -> () in
-                                            var actions: [UIAlertAction] = [];
-                                            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
-                                            guard let err = error else {
-                                                // TODO: use localized strings
-                                                NotificationHelper.sharedInstance.showAlert(title: "Error Signing In", message: "Encountered an unknown error", actions: actions, context: self)
-                                                return
-                                            }
-
-                                            let error = err as NSError
-                                            print(error)
-                                            switch error.code {
-                                            case LISDKErrorCode.NETWORK_UNAVAILABLE.hashValue:
-                                                NotificationHelper.sharedInstance.showAlert(title: "Network Unavailable", message: "Encountered error with Internet connection", actions: actions, context: self)
-                                                break
-                                            case LISDKErrorCode.USER_CANCELLED.hashValue, LISDKErrorCode.LINKEDIN_APP_NOT_FOUND.hashValue:
-                                                // Do nothing
-                                                break
-                                            default:
-                                                break
-                                            }
+        LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
+            let session = LISDKSessionManager.sharedInstance().session!
+            UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
+            LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
+            
+            // Segue into the tabs
+            self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
+        }, errorBlock: { error in
+            var actions: [UIAlertAction] = [];
+            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+            guard let err = error else {
+                // TODO: use localized strings
+                NotificationHelper.sharedInstance.showAlert(title: "Error Signing In", message: "Encountered an unknown error", actions: actions, context: self)
+                return
+            }
+            
+            let error = err as NSError
+            print(error)
+            switch error.code {
+            case LISDKErrorCode.NETWORK_UNAVAILABLE.hashValue:
+                NotificationHelper.sharedInstance.showAlert(title: "Network Unavailable", message: "Encountered error with Internet connection", actions: actions, context: self)
+                break
+            case LISDKErrorCode.USER_CANCELLED.hashValue, LISDKErrorCode.LINKEDIN_APP_NOT_FOUND.hashValue:
+                // Do nothing
+                break
+            default:
+                break
+            }
         })
     }
 }
