@@ -22,6 +22,8 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         let accessToken = LinkedInHelper.sharedInstance.getAccessToken()
         LinkedInHelper.sharedInstance.resumeSession(accessToken)
         NSLog("Access token: %@", accessToken)
+        
+        NetworkHelper.sharedInstance.signUpWithEmail(email: "peterwangtao0@hotmail.com")
     }
     
     override func viewDidAppear(_ animated: Bool) {}
