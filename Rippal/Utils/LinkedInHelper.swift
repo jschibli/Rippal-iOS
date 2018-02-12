@@ -28,7 +28,7 @@ final class LinkedInHelper {
         return expiration < Date()
     }
     
-    func getAccessToken() -> LISDKAccessToken? {
+    func getAccessToken() -> LISDKAccessToken {
         let tokenValue = UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_value")!)
         let expiration = UserDefaults.standard.object(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_expiration")!) as! Date
         return LISDKAccessToken(value: tokenValue, expiresOnMillis: Int64(expiration.timeIntervalSince1970) * 1000)
@@ -36,5 +36,13 @@ final class LinkedInHelper {
     
     func newSession(successBlock: @escaping AuthSuccessBlock, errorBlock: @escaping AuthErrorBlock) {
         LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: successBlock, errorBlock: errorBlock)
+    }
+    
+    func resumeSession(_ accessToken: LISDKAccessToken) {
+        return LISDKSessionManager.createSession(with: accessToken)
+    }
+    
+    func getUserInfo(successBlock: @escaping (LISDKAPIResponse?) -> Void, errorBlock: @escaping (LISDKAPIError?) -> Void) {
+        LISDKAPIHelper.sharedInstance().getRequest("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address)?format=json", success: successBlock, error: errorBlock)
     }
 }

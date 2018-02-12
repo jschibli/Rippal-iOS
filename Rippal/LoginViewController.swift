@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
             UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
             LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
             
+            // TODO: communicate with server whether to create a new user or update existing one
+            
             // Segue into the tabs
             self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
         }, errorBlock: { error in
@@ -43,7 +45,7 @@ class LoginViewController: UIViewController {
             }
             
             let error = err as NSError
-            print(error)
+            NSLog("Sign in error: %@", error)
             switch error.code {
             case LISDKErrorCode.NETWORK_UNAVAILABLE.hashValue:
                 NotificationHelper.sharedInstance.showAlert(title: "Network Unavailable", message: "Encountered error with Internet connection", actions: actions, context: self)
