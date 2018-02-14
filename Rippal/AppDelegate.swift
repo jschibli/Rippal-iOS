@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialViewController:UIViewController
         // TODO: hardcoded to true
         if UserHelper.sharedInstance.isLoggedIn() && LinkedInHelper.sharedInstance.hasSession()
-            && !LinkedInHelper.sharedInstance.sessionExpired() || true {
+            && !LinkedInHelper.sharedInstance.sessionExpired() && false {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")

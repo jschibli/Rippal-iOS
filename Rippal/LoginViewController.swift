@@ -35,13 +35,13 @@ class LoginViewController: UIViewController {
             LinkedInHelper.sharedInstance.getUserInfo(successBlock: { response in
                 let userInfo = StringHelper.sharedInstance.jsonStringToDict(input: (response?.data)!) as Dictionary!
                 let email = userInfo!["emailAddress"] as! String
+                let firstName = userInfo!["firstName"] as! String
+                let lastName = userInfo!["lastName"] as! String
+                let id = userInfo!["id"] as! String
                 NetworkHelper.sharedInstance.checkUserExists(email: email, completionHandler: { response in
                     if response.response?.statusCode != 200 {       // User not found
                         NSLog("User not found")
-                        let firstName = userInfo!["firstName"] as! String
-                        let lastName = userInfo!["lastName"] as! String
-                        let id = userInfo!["id"] as! String
-                        NetworkHelper.sharedInstance.signUp(email: email, firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
+                        NetworkHelper.sharedInstance.signUp(email: email, password: "TODO:", firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
                             if response.response?.statusCode != 200 {
                                 // TODO: prompt to say something was wrong
                             }
@@ -49,7 +49,11 @@ class LoginViewController: UIViewController {
                         })
                     } else {        // Found user
                         NSLog("Found user")
-                        // TODO: update user information
+                        NetworkHelper.sharedInstance.updateUserInfo(email: email, firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
+                            if response.response?.statusCode != 200 {
+                                NSLog("Failed to update user info")
+                            }
+                        })
                     }
                 })
             }, errorBlock: { error in
@@ -59,7 +63,7 @@ class LoginViewController: UIViewController {
             
             
             // Segue into the tabs
-            self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
+//            self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
         }, errorBlock: { error in
             var actions: [UIAlertAction] = [];
             actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
