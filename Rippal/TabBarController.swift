@@ -18,15 +18,30 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        
-        let accessToken = LinkedInHelper.sharedInstance.getAccessToken()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard let accessToken = LinkedInHelper.sharedInstance.getAccessToken() else {
+            // TODO: prompt to refresh token
+            return
+        }
         LinkedInHelper.sharedInstance.resumeSession(accessToken)
         NSLog("Access token: %@", accessToken)
         
-        NetworkHelper.sharedInstance.signUpWithEmail(email: "peterwangtao0@hotmail.com")
+        NetworkHelper.sharedInstance.checkServerRunning { response in
+            if response.response?.statusCode == 200 {
+                serverRunning = true
+                NSLog("Server is running")
+            } else {
+                serverRunning = false
+                NSLog("Server is NOT running")
+                // TODO: use localised strings instead
+                var actions: [UIAlertAction] = [];
+                actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+                NotificationHelper.sharedInstance.showAlert(title: "Server Is Down", message: "Cannot connect to Rippal server, some functionalities might be limited", actions: actions, context: self)
+            }
+        }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {}
     
     func checkLocationPermission() {
         if CLLocationManager.authorizationStatus() == .notDetermined {

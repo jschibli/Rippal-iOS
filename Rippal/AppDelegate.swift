@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Determine whether to go to login screen or home screen
         let initialViewController:UIViewController
+        // TODO: hardcoded to true
         if UserHelper.sharedInstance.isLoggedIn() && LinkedInHelper.sharedInstance.hasSession()
-            && !LinkedInHelper.sharedInstance.sessionExpired() {
+            && !LinkedInHelper.sharedInstance.sessionExpired() || true {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")

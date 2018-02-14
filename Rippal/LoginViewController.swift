@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
     
@@ -31,7 +32,31 @@ class LoginViewController: UIViewController {
             UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
             LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
             
+            LinkedInHelper.sharedInstance.getUserInfo(successBlock: { response in
+                let userInfo = StringHelper.sharedInstance.jsonStringToDict(input: (response?.data)!) as Dictionary!
+                let email = userInfo!["emailAddress"] as! String
+                NetworkHelper.sharedInstance.checkUserExists(email: email, completionHandler: { response in
+                    if response.response?.statusCode != 200 {       // User not found
+                        NSLog("User not found")
+                        let firstName = userInfo!["firstName"] as! String
+                        let lastName = userInfo!["lastName"] as! String
+                        let id = userInfo!["id"] as! String
+                        NetworkHelper.sharedInstance.signUp(email: email, firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
+                            if response.response?.statusCode != 200 {
+                                // TODO: prompt to say something was wrong
+                            }
+                            // TODO:
+                        })
+                    } else {        // Found user
+                        NSLog("Found user")
+                        // TODO: update user information
+                    }
+                })
+            }, errorBlock: { error in
+                
+            })
             // TODO: communicate with server whether to create a new user or update existing one
+            
             
             // Segue into the tabs
             self.performSegue(withIdentifier: "sw_login_tab", sender: sender)

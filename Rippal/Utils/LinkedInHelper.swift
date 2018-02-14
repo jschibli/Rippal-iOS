@@ -28,10 +28,15 @@ final class LinkedInHelper {
         return expiration < Date()
     }
     
-    func getAccessToken() -> LISDKAccessToken {
-        let tokenValue = UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_value")!)
-        let expiration = UserDefaults.standard.object(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_expiration")!) as! Date
-        return LISDKAccessToken(value: tokenValue, expiresOnMillis: Int64(expiration.timeIntervalSince1970) * 1000)
+    func getAccessToken() -> LISDKAccessToken? {
+        guard let tokenValue = UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_value")!) else {
+            return nil
+        }
+        guard let expiration = UserDefaults.standard.object(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_expiration")!) else {
+            return nil
+        }
+        let expirationDate = expiration as! Date
+        return LISDKAccessToken(value: tokenValue, expiresOnMillis: Int64(expirationDate.timeIntervalSince1970) * 1000)
     }
     
     func newSession(successBlock: @escaping AuthSuccessBlock, errorBlock: @escaping AuthErrorBlock) {

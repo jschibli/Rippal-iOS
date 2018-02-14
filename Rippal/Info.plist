@@ -70,5 +70,9 @@
 		<string>linkedin-sdk</string>
 		<string>linkedin-sdk2</string>
 	</array>
+	<key>NSAppTransportSecurity</key>  
+	<dict>  
+		<key>NSAllowsArbitraryLoads</key><true/>  
+	</dict>  
 </dict>
 </plist>
