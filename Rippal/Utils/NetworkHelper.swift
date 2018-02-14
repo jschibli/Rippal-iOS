@@ -17,22 +17,24 @@ final class NetworkHelper {
     static let sharedInstance = NetworkHelper()
     let manager: Alamofire.SessionManager
     
+    class RippalTrustPolicyManager : ServerTrustPolicyManager {
+        override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+            return .disableEvaluation
+        }
+
+        public init() {
+            super.init(policies: [:])
+        }
+    }
+    
     private init() {
         manager = {
-            let serverTrustPolicies: [String: ServerTrustPolicy] = [
-                Constants.paths.domain: .disableEvaluation,     // TODO: leave only domain here
-                "localhost": .disableEvaluation,
-                "127.0.0.1": .disableEvaluation
-//                "140.233.182.169": .disableEvaluation
-            ]
-            
             let configuration = URLSessionConfiguration.default
             configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
             
             return Alamofire.SessionManager(
                 configuration: configuration,
-
-                serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+                serverTrustPolicyManager: RippalTrustPolicyManager()
             )
         }()
     }
