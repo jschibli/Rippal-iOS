@@ -12,17 +12,19 @@ import UIKit
 final class DataStore {
     
     static let sharedInstance = DataStore()
-    fileprivate init() {}
+    fileprivate init() {
+        user = nil
+    }
     
     var cities: [City] = []
     var connections: [Connection] = []
+    var user: User?
     
     // Pulls from saved connections and updates
     func loadCities(completion: @escaping () -> Void) {
         // TODO: pull up locally saved cities
         
         // TODO: check for current location if permission given, and refresh city list
-        
         
         completion()
     }
@@ -32,5 +34,9 @@ final class DataStore {
         // TODO: pull up locally saved connections
         
         // TODO: check for current location if permission given and refresh city list
+    }
+    
+    func setUser(email: String, firstName: String, lastName: String, id: String) {
+        user = User(email: email, firstName: firstName, lastName: lastName, id: id)
     }
 }

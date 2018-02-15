@@ -26,6 +26,8 @@
 		76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6A2019933400C794F5 /* ProfileViewController.swift */; };
 		76688F6D2019A15B00C794F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76688F6C2019A15B00C794F5 /* LoginViewController.swift */; };
 		76688F6F2019B44400C794F5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76688F6E2019B44400C794F5 /* keys.plist */; };
+		7669B92720352E1700996F55 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7669B92620352E1700996F55 /* SignupViewController.swift */; };
+		7669B9292035375D00996F55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7669B9282035375D00996F55 /* User.swift */; };
 		768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB141203176A800AEAEF0 /* UserHelper.swift */; };
 		768CB1442031788100AEAEF0 /* LinkedInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB1432031788100AEAEF0 /* LinkedInHelper.swift */; };
 		76AF7887203189A30026DB8F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AF7886203189A30026DB8F /* NetworkHelper.swift */; };
@@ -81,6 +83,8 @@
 		76688F6A2019933400C794F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76688F6C2019A15B00C794F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76688F6E2019B44400C794F5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		7669B92620352E1700996F55 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		7669B9282035375D00996F55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		768CB141203176A800AEAEF0 /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		768CB1432031788100AEAEF0 /* LinkedInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInHelper.swift; sourceTree = "<group>"; };
 		76AF7886203189A30026DB8F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				760D7DBB201BB20600145870 /* City.swift */,
 				760D7DBF201D350300145870 /* Connection.swift */,
+				7669B9282035375D00996F55 /* User.swift */,
 				760D7DBD201BB2D500145870 /* DataStore.swift */,
 			);
 			path = Data;
@@ -183,6 +188,7 @@
 				764ECDEF20170E0600F179AE /* AppDelegate.swift */,
 				760D7DC1201D3A2E00145870 /* TabBarController.swift */,
 				76688F6C2019A15B00C794F5 /* LoginViewController.swift */,
+				7669B92620352E1700996F55 /* SignupViewController.swift */,
 				764ECDF120170E0600F179AE /* HomeViewController.swift */,
 				764ECDF320170E0600F179AE /* ExploreViewController.swift */,
 				76688F682019932300C794F5 /* CalendarViewController.swift */,
@@ -565,6 +571,8 @@
 				768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */,
 				76B94C0020203C8F00F52014 /* DateHelper.swift in Sources */,
 				764ECDF420170E0600F179AE /* ExploreViewController.swift in Sources */,
+				7669B9292035375D00996F55 /* User.swift in Sources */,
+				7669B92720352E1700996F55 /* SignupViewController.swift in Sources */,
 				76BD0A0A201D4B8B0003480C /* NotificationHelper.swift in Sources */,
 				76688F6B2019933400C794F5 /* ProfileViewController.swift in Sources */,
 				76AF7887203189A30026DB8F /* NetworkHelper.swift in Sources */,

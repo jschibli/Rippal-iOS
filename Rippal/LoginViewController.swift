@@ -13,12 +13,24 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var btnSignInLinkedIn: UIButton!
     
+    var email: String?
+    var password: String?
+    var firstName: String?
+    var lastName: String?
+    var id: String?
+    
+    var throughLinkedIn: Bool?           // Whether user signs up/logs in with LinkedIn or signs up from scratch
+    
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        performSegue(withIdentifier: "sw_login_tab", sender: self)
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,6 +39,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnSignInLinkedInPressed(_ sender: Any) {
+        throughLinkedIn = true
         LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
             let session = LISDKSessionManager.sharedInstance().session!
             UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
@@ -41,12 +54,13 @@ class LoginViewController: UIViewController {
                 NetworkHelper.sharedInstance.checkUserExists(email: email, completionHandler: { response in
                     if response.response?.statusCode != 200 {       // User not found
                         NSLog("User not found")
-                        NetworkHelper.sharedInstance.signUp(email: email, password: "TODO:", firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
-                            if response.response?.statusCode != 200 {
-                                // TODO: prompt to say something was wrong
-                            }
-                            // TODO:
-                        })
+                        self.performSegue(withIdentifier: "sw_login_signup", sender: sender)
+//                        NetworkHelper.sharedInstance.signUp(email: email, password: "TODO:", firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
+//                            if response.response?.statusCode != 200 {
+//                                // TODO: prompt to say something was wrong
+//                            }
+//                            // TODO:
+//                        })
                     } else {        // Found user
                         NSLog("Found user")
                         NetworkHelper.sharedInstance.updateUserInfo(email: email, firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
@@ -54,16 +68,13 @@ class LoginViewController: UIViewController {
                                 NSLog("Failed to update user info")
                             }
                         })
+                        // Segue into the tabs
+                        self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
                     }
                 })
             }, errorBlock: { error in
                 
             })
-            // TODO: communicate with server whether to create a new user or update existing one
-            
-            
-            // Segue into the tabs
-//            self.performSegue(withIdentifier: "sw_login_tab", sender: sender)
         }, errorBlock: { error in
             var actions: [UIAlertAction] = [];
             actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
@@ -86,6 +97,18 @@ class LoginViewController: UIViewController {
                 break
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "sw_login_signup":
+            let destinationVC = segue.destination as! SignupViewController
+            destinationVC.continueSignUp = throughLinkedIn              // Have LinkedIn data already
+            NSLog("Preparing segue")
+            break
+        default:
+            break
+        }
     }
 }
 
