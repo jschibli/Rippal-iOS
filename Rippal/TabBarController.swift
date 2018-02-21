@@ -18,6 +18,8 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        
+        UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {

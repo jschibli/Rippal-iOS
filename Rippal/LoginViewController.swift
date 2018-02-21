@@ -43,27 +43,21 @@ class LoginViewController: UIViewController {
         LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
             let session = LISDKSessionManager.sharedInstance().session!
             UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
-            LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
+            LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)       // Save session
             
             LinkedInHelper.sharedInstance.getUserInfo(successBlock: { response in
                 let userInfo = StringHelper.sharedInstance.jsonStringToDict(input: (response?.data)!) as Dictionary!
-                let email = userInfo!["emailAddress"] as! String
-                let firstName = userInfo!["firstName"] as! String
-                let lastName = userInfo!["lastName"] as! String
-                let id = userInfo!["id"] as! String
-                NetworkHelper.sharedInstance.checkUserExists(email: email, completionHandler: { response in
+                self.email = userInfo!["emailAddress"] as? String
+                self.firstName = userInfo!["firstName"] as? String
+                self.lastName = userInfo!["lastName"] as? String
+                self.id = userInfo!["id"] as? String
+                NetworkHelper.sharedInstance.checkUserExists(email: self.email!, completionHandler: { response in
                     if response.response?.statusCode != 200 {       // User not found
                         NSLog("User not found")
                         self.performSegue(withIdentifier: "sw_login_signup", sender: sender)
-//                        NetworkHelper.sharedInstance.signUp(email: email, password: "TODO:", firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
-//                            if response.response?.statusCode != 200 {
-//                                // TODO: prompt to say something was wrong
-//                            }
-//                            // TODO:
-//                        })
                     } else {        // Found user
                         NSLog("Found user")
-                        NetworkHelper.sharedInstance.updateUserInfo(email: email, firstName: firstName, lastName: lastName, id: id, completionHandler: { response in
+                        NetworkHelper.sharedInstance.updateUserInfo(email: self.email!, firstName: self.firstName!, lastName: self.lastName!, id: self.id!, completionHandler: { response in
                             if response.response?.statusCode != 200 {
                                 NSLog("Failed to update user info")
                             }
@@ -109,6 +103,10 @@ class LoginViewController: UIViewController {
         case "sw_login_signup":
             let destinationVC = segue.destination as! SignupViewController
             destinationVC.continueSignUp = throughLinkedIn              // Have LinkedIn data already
+            destinationVC.email = email!
+            destinationVC.lastName = lastName!
+            destinationVC.firstName = firstName!
+            destinationVC.id = id!
             NSLog("Preparing segue")
             break
         default:
