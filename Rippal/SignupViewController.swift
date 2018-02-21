@@ -16,10 +16,11 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var txtFld_password: UITextField!
     @IBOutlet weak var txtFld_passwordConfirm: UITextField!
     @IBOutlet weak var btn_signup: UIButton!
+    @IBOutlet weak var btn_back: UIButton!
     
     @IBOutlet weak var passwordFieldTopConstraint: NSLayoutConstraint!
     
-    var continueSignUp: Bool?
+    var continueSignUp: Bool = false;
     var email: String?
     var password: String?
     var firstName: String?
@@ -32,7 +33,7 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if continueSignUp! {
+        if continueSignUp {
             txtFld_email.isHidden = true
             txtFld_firstName.isHidden = true
             txtFld_lastName.isHidden = true
@@ -54,25 +55,81 @@ class SignupViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    @IBAction func signUp(_ sender: Any) {
-        NSLog("Password %d", txtFld_password.hasText ? 1 : 0)
-        NSLog("Confirm %d", txtFld_passwordConfirm.hasText ? 1 : 0)
+    @IBAction func btnSignUpPressed(_ sender: Any) {
+        // TODO: use localised strings
+        var actions: [UIAlertAction] = [];
+        actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+        
+        if !continueSignUp {
+            if !txtFld_email.hasText || !StringHelper.sharedInstance.isValidEmail(testStr: txtFld_email.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) {
+                // TODO: use localised strings
+                NotificationHelper.sharedInstance.showAlert(title: "Incorrect email format", message: "Please fix email field before signing up", actions: actions, context: self)
+                return
+            }
+            email = txtFld_email.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+            if !txtFld_lastName.hasText {
+                // TODO: use localised strings
+                NotificationHelper.sharedInstance.showAlert(title: "Missing last name", message: "Please put in last name before signing up", actions: actions, context: self)
+                return
+            }
+            lastName = txtFld_lastName.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            lastName?.capitalizeFirstLetter()
+            
+            if !txtFld_firstName.hasText {
+                // TODO: use localised strings
+                NotificationHelper.sharedInstance.showAlert(title: "Missing first name", message: "Please put in first name before signing up", actions: actions, context: self)
+                return
+            }
+            firstName = txtFld_firstName.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            firstName?.capitalizeFirstLetter()
+        }
+        // Check if passwords match
+        if !txtFld_password.hasText || !txtFld_passwordConfirm.hasText {
+            NotificationHelper.sharedInstance.showAlert(title: "No password", message: "Please set password", actions: actions, context: self)
+            return
+        }
+        if txtFld_password.text!.count < 6 {
+            NotificationHelper.sharedInstance.showAlert(title: "Password too short", message: "Password should be at least 6 characters long", actions: actions, context: self)
+            return
+        }
+        if txtFld_password.text! != txtFld_passwordConfirm.text! {
+            NotificationHelper.sharedInstance.showAlert(title: "Passwords do not match", message: "Please check again", actions: actions, context: self)
+            return
+        }
+        
+        // Hash password
+        password = PasswordHelper.sharedInstance.md5(raw: txtFld_password.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+        
+        // If id is empty
+        if (id ?? "").isEmpty {
+            id = "null"
+        }
+        NetworkHelper.sharedInstance.signUp(email: email!, password: password!, firstName: firstName!, lastName: lastName!, id: id!) { response in
+            if response.response?.statusCode == 200 {
+                self.performSegue(withIdentifier: "sw_signup_tab", sender: sender)
+            } else {
+                let json = String(data: response.data!, encoding: .utf8)
+                NotificationHelper.sharedInstance.showAlert(title: "Encountered error", message: StringHelper.sharedInstance.jsonStringToDict(input: json!)!["error"] as! String, actions: actions, context: self)
+            }
+        }
     }
-
+    
+    @IBAction func btnBackPressed(_ sender: Any) {
+        performSegue(withIdentifier: "sw_signup_login", sender: sender)
+    }
+    
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height / 3
+            NSLog("Keyboard height when showing %f", keyboardSize.height)
+            if view.frame.origin.y == 0 {
+                view.frame.origin.y -= (keyboardSize.height + 42) / 3           // No idea why
             }
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height / 3
-            }
-        }
+        view.frame.origin.y = 0
     }
     
     @objc func dismissKeyboard() {

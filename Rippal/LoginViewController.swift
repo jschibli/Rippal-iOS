@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     var lastName: String?
     var id: String?
     
-    var throughLinkedIn: Bool?           // Whether user signs up/logs in with LinkedIn or signs up from scratch
+    var throughLinkedIn: Bool = false           // Whether user signs up/logs in with LinkedIn or signs up from scratch
     
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
