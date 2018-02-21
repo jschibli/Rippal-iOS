@@ -99,6 +99,11 @@ class LoginViewController: UIViewController {
         })
     }
     
+    @IBAction func btnSignUpPressed(_ sender: Any) {
+        throughLinkedIn = false
+        performSegue(withIdentifier: "sw_login_signup", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "sw_login_signup":
@@ -111,5 +116,6 @@ class LoginViewController: UIViewController {
         }
     }
 }
+
 
 

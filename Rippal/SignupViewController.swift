@@ -42,16 +42,40 @@ class SignupViewController: UIViewController {
             passwordFieldTopConstraint.constant = -80           // TODO: Localise for different screens?
             view.layoutIfNeeded()
         }
+        
+        // Keyboard show or hide notification
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    
     @IBAction func signUp(_ sender: Any) {
-        NSLog("Password %@", txtFld_password.text!)
-        NSLog("Confirm %@", txtFld_passwordConfirm.text!)
+        NSLog("Password %d", txtFld_password.hasText ? 1 : 0)
+        NSLog("Confirm %d", txtFld_passwordConfirm.hasText ? 1 : 0)
+    }
+
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height / 3
+            }
+        }
     }
     
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height / 3
+            }
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
