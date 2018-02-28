@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var img_city: UIImageView!
     @IBOutlet weak var img_user_avatar: UIImageView!
+    @IBOutlet weak var txt_fld_name: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class ProfileViewController: UIViewController {
         img_user_avatar.layer.masksToBounds = false
         img_user_avatar.clipsToBounds = true
         loadProfilePicture()
+        
+        let parentViewController: TabBarController = parent as! TabBarController
+        txt_fld_name.text = parentViewController.firstName! + " " + parentViewController.lastName!
         
         // TODO: remove
         NSLog("ProfileView Loaded")

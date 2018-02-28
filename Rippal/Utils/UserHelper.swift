@@ -28,6 +28,22 @@ final class UserHelper {
         }
     }
     
+    func cacheUserInfo(email: String, firstName: String, lastName: String, id: String) {
+        UserDefaults.standard.set(email, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)
+        UserDefaults.standard.set(firstName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)
+        UserDefaults.standard.set(lastName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)
+        UserDefaults.standard.set(id, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)
+    }
+    
+    func loadUserInfo() -> [String] {
+        var retArr: [String] = []
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)!)
+        return retArr
+    }
+    
     func hasCachedAvatar() -> Bool {
         return UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
     }

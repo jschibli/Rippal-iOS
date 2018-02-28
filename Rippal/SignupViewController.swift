@@ -120,6 +120,21 @@ class SignupViewController: UIViewController {
         performSegue(withIdentifier: "sw_signup_login", sender: sender)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        NSLog("Preparing segue...")
+        switch segue.identifier! {
+        case "sw_signup_tab":
+            let destinationVC = segue.destination as! TabBarController
+            destinationVC.email = email
+            destinationVC.lastName = lastName
+            destinationVC.firstName = firstName
+            destinationVC.id = id
+            break
+        default:
+            break
+        }
+    }
+    
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             NSLog("Keyboard height when showing %f", keyboardSize.height)

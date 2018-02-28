@@ -99,6 +99,7 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        NSLog("Preparing segue...")
         switch segue.identifier! {
         case "sw_login_signup":
             let destinationVC = segue.destination as! SignupViewController
@@ -109,7 +110,13 @@ class LoginViewController: UIViewController {
                 destinationVC.firstName = firstName!
                 destinationVC.id = id!
             }
-            NSLog("Preparing segue")
+            break
+        case "sw_login_tab":
+            let destinationVC = segue.destination as! TabBarController
+            destinationVC.email = email
+            destinationVC.lastName = lastName
+            destinationVC.firstName = firstName
+            destinationVC.id = id
             break
         default:
             break

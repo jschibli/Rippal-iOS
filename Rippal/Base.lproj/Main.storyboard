@@ -451,14 +451,36 @@
                                     <constraint firstAttribute="width" constant="130" id="ODs-ZM-rkX"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCU-tM-ntV">
+                                <rect key="frame" x="0.0" y="263" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VuB-Ub-9WG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-ee-fa3">
+                                <rect key="frame" x="0.0" y="313" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="m0Q-3u-fJz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aCU-tM-ntV" firstAttribute="top" secondItem="ise-he-9nu" secondAttribute="bottom" constant="8" id="4MJ-WS-wLH"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="C25-uH-RA2"/>
+                            <constraint firstItem="Tfp-ee-fa3" firstAttribute="top" secondItem="aCU-tM-ntV" secondAttribute="bottom" id="Nqn-2a-TOp"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="top" secondItem="MHs-bk-Eqv" secondAttribute="top" id="Qin-zj-gNF"/>
+                            <constraint firstItem="aCU-tM-ntV" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="VOB-kI-8kD"/>
                             <constraint firstItem="ise-he-9nu" firstAttribute="bottom" secondItem="b0M-eU-Waw" secondAttribute="bottom" constant="65" id="Xx7-R5-pN6"/>
+                            <constraint firstItem="aCU-tM-ntV" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="YaI-d9-AtR"/>
                             <constraint firstItem="ise-he-9nu" firstAttribute="centerX" secondItem="OQd-Kf-4rl" secondAttribute="centerX" id="bvE-Nz-DF4"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="w1Q-lo-84C"/>
+                            <constraint firstItem="Tfp-ee-fa3" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="w5m-Is-Ptm"/>
+                            <constraint firstItem="Tfp-ee-fa3" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="wQh-Xb-czh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHs-bk-Eqv"/>
                     </view>
@@ -466,6 +488,7 @@
                     <connections>
                         <outlet property="img_city" destination="b0M-eU-Waw" id="nX0-yu-lXy"/>
                         <outlet property="img_user_avatar" destination="ise-he-9nu" id="H46-7I-Qqf"/>
+                        <outlet property="txt_fld_name" destination="aCU-tM-ntV" id="3Nr-pj-4LB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1n-Pk-AVj" userLabel="First Responder" sceneMemberID="firstResponder"/>

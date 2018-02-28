@@ -11,6 +11,11 @@ import UIKit
 
 class TabBarController: UITabBarController, CLLocationManagerDelegate {
     
+    var email: String?
+    var firstName: String?
+    var lastName: String?
+    var id: String?
+    
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -20,6 +25,15 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
+        if email != nil && firstName != nil && lastName != nil && id != nil {
+            UserHelper.sharedInstance.cacheUserInfo(email: email!, firstName: firstName!, lastName: lastName!, id: id!)
+        } else {
+            let infoArr: [String] = UserHelper.sharedInstance.loadUserInfo()
+            email = infoArr[0]
+            firstName = infoArr[1]
+            lastName = infoArr[2]
+            id = infoArr[3]
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
