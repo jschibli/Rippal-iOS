@@ -103,10 +103,12 @@ class LoginViewController: UIViewController {
         case "sw_login_signup":
             let destinationVC = segue.destination as! SignupViewController
             destinationVC.continueSignUp = throughLinkedIn              // Have LinkedIn data already
-            destinationVC.email = email!
-            destinationVC.lastName = lastName!
-            destinationVC.firstName = firstName!
-            destinationVC.id = id!
+            if throughLinkedIn {
+                destinationVC.email = email!
+                destinationVC.lastName = lastName!
+                destinationVC.firstName = firstName!
+                destinationVC.id = id!
+            }
             NSLog("Preparing segue")
             break
         default:

@@ -23,12 +23,26 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // TODO: use localised strings instead
+        var actions: [UIAlertAction] = [];
+        actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+        
         guard let accessToken = LinkedInHelper.sharedInstance.getAccessToken() else {
             // TODO: prompt to refresh token
+            NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
+            selectedIndex = 3
+            if let items =  self.tabBarController?.tabBar.items {
+                for i in 0 ..< items.count {
+                    let itemToDisable = items[i]
+                    itemToDisable.isEnabled = false
+                }
+            }
+            
             return
         }
         LinkedInHelper.sharedInstance.resumeSession(accessToken)
-        NSLog("Access token: %@", accessToken)
+        NSLog("Session resumed")
+//        NSLog("Access token: %@", accessToken)
         
         NetworkHelper.sharedInstance.checkServerRunning { response in
             if response.response?.statusCode == 200 {
@@ -38,8 +52,6 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
                 serverRunning = false
                 NSLog("Server is NOT running")
                 // TODO: use localised strings instead
-                var actions: [UIAlertAction] = [];
-                actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
                 NotificationHelper.sharedInstance.showAlert(title: "Server Is Down", message: "Cannot connect to Rippal server, some functionalities might be limited", actions: actions, context: self)
             }
         }

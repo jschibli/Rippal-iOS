@@ -105,6 +105,7 @@ class SignupViewController: UIViewController {
         if (id ?? "").isEmpty {
             id = "null"
         }
+        
         NetworkHelper.sharedInstance.signUp(email: email!, password: password!, firstName: firstName!, lastName: lastName!, id: id!) { response in
             if response.response?.statusCode == 200 {
                 self.performSegue(withIdentifier: "sw_signup_tab", sender: sender)
