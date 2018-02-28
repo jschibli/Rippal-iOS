@@ -8,6 +8,7 @@ target 'Rippal' do
 
 	# Pods for Rippal
 	pod 'Alamofire', '~> 4.5'
+	pod 'AlamofireImage', '~> 3.3'
 
 	target 'RippalTests' do
 		inherit! :search_paths

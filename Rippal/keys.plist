@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>userdefaults_has_cached_avatar</key>
+	<string>has_cached_avatar</string>
+	<key>userdefaults_cached_avatar</key>
+	<string>cached_avatar</string>
 	<key>userdefaults_session_access_token_expiration</key>
 	<string>access_token_expiration</string>
 	<key>userdefaults_session_access_token_value</key>

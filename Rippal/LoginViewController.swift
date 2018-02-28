@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
                     }
                 })
             }, errorBlock: { error in
-                
+                // Do nothing
             })
         }, errorBlock: { error in
             var actions: [UIAlertAction] = [];
