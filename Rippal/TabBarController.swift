@@ -41,7 +41,7 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         var actions: [UIAlertAction] = [];
         actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
         
-        guard let accessToken = LinkedInHelper.sharedInstance.getAccessToken() else {
+        if !LinkedInHelper.sharedInstance.hasSession() {
             // TODO: prompt to refresh token
             NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
             selectedIndex = 3
@@ -51,12 +51,12 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
                     itemToDisable.isEnabled = false
                 }
             }
-            
             return
         }
-        LinkedInHelper.sharedInstance.resumeSession(accessToken)
-        NSLog("Session resumed")
-//        NSLog("Access token: %@", accessToken)
+        
+//        NSLog("Access token here: \(accessToken)")
+//        LinkedInHelper.sharedInstance.resumeSession(accessToken)
+//        NSLog("Session resumed")
         
         NetworkHelper.sharedInstance.checkServerRunning { response in
             if response.response?.statusCode == 200 {

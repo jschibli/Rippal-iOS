@@ -20,7 +20,8 @@ final class LinkedInHelper {
     }
     
     func hasSession() -> Bool {
-        return UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_value")!) != nil
+        resumeSession(getAccessToken())
+        return LISDKSessionManager.hasValidSession()
     }
     
     func sessionExpired() -> Bool {
@@ -40,11 +41,13 @@ final class LinkedInHelper {
     }
     
     func newSession(successBlock: @escaping AuthSuccessBlock, errorBlock: @escaping AuthErrorBlock) {
+        LISDKSessionManager.clearSession()
         LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: successBlock, errorBlock: errorBlock)
     }
     
-    func resumeSession(_ accessToken: LISDKAccessToken) {
-        return LISDKSessionManager.createSession(with: accessToken)
+    func resumeSession(_ accessToken: LISDKAccessToken?) {
+        LISDKSessionManager.clearSession()
+        LISDKSessionManager.createSession(with: accessToken)
     }
     
     func getUserInfo(successBlock: @escaping (LISDKAPIResponse?) -> Void, errorBlock: @escaping (LISDKAPIError?) -> Void) {

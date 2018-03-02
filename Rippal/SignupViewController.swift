@@ -137,7 +137,6 @@ class SignupViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            NSLog("Keyboard height when showing %f", keyboardSize.height)
             if view.frame.origin.y == 0 {
                 view.frame.origin.y -= (keyboardSize.height + 42) / 3           // No idea why
             }

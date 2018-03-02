@@ -24,8 +24,19 @@ final class UserHelper {
     func setLoggedIn(loggedIn: Bool) {
         UserDefaults.standard.set(loggedIn, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_logged_in")!)
         if !loggedIn {
-            UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
+            UserDefaults.standard.set(false, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
         }
+    }
+    
+    func logout(currentVC: UIViewController, _ sender: Any) {
+        setLoggedIn(loggedIn: false)
+        UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)
+        UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)
+        UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)
+        UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)
+        UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_cached_avatar")!)  // Clear saved avatar
+        
+        currentVC.performSegue(withIdentifier: "sw_tab_login", sender: sender)
     }
     
     func cacheUserInfo(email: String, firstName: String, lastName: String, id: String) {
@@ -67,7 +78,6 @@ final class UserHelper {
         } else {
             LinkedInHelper.sharedInstance.getProfilePictureUrl(successBlock: { response in
                 if response?.statusCode == 200 {
-                    
                     let rawArray = StringHelper.sharedInstance.jsonStringToDict(input: response!.data)!["values"]
                     var url = rawArray.map({ item -> String in
                         return String(describing: item)

@@ -467,28 +467,53 @@
                                     <constraint firstAttribute="height" constant="1" id="m0Q-3u-fJz"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9O0-vw-E7a">
+                                <rect key="frame" x="0.0" y="322" width="375" height="296"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHd-WW-3h3">
+                                <rect key="frame" x="302" y="198" width="81" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FYP-n5-e6u"/>
+                                </constraints>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogOutPressed:" destination="d4L-2d-VBK" eventType="touchUpInside" id="5YI-rf-fZ8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aCU-tM-ntV" firstAttribute="top" secondItem="ise-he-9nu" secondAttribute="bottom" constant="8" id="4MJ-WS-wLH"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="C25-uH-RA2"/>
+                            <constraint firstItem="VHd-WW-3h3" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" constant="8" id="EuH-yy-7BM"/>
+                            <constraint firstItem="9O0-vw-E7a" firstAttribute="top" secondItem="Tfp-ee-fa3" secondAttribute="bottom" constant="8" id="Kwh-zC-MsY"/>
                             <constraint firstItem="Tfp-ee-fa3" firstAttribute="top" secondItem="aCU-tM-ntV" secondAttribute="bottom" id="Nqn-2a-TOp"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="top" secondItem="MHs-bk-Eqv" secondAttribute="top" id="Qin-zj-gNF"/>
+                            <constraint firstItem="MHs-bk-Eqv" firstAttribute="bottom" secondItem="9O0-vw-E7a" secondAttribute="bottom" id="U4i-xS-HBw"/>
                             <constraint firstItem="aCU-tM-ntV" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="VOB-kI-8kD"/>
                             <constraint firstItem="ise-he-9nu" firstAttribute="bottom" secondItem="b0M-eU-Waw" secondAttribute="bottom" constant="65" id="Xx7-R5-pN6"/>
                             <constraint firstItem="aCU-tM-ntV" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="YaI-d9-AtR"/>
+                            <constraint firstItem="MHs-bk-Eqv" firstAttribute="trailing" secondItem="9O0-vw-E7a" secondAttribute="trailing" id="bEr-cl-CRo"/>
                             <constraint firstItem="ise-he-9nu" firstAttribute="centerX" secondItem="OQd-Kf-4rl" secondAttribute="centerX" id="bvE-Nz-DF4"/>
+                            <constraint firstItem="VHd-WW-3h3" firstAttribute="top" secondItem="b0M-eU-Waw" secondAttribute="bottom" constant="8" id="msL-tw-aJP"/>
+                            <constraint firstItem="VHd-WW-3h3" firstAttribute="leading" secondItem="ise-he-9nu" secondAttribute="trailing" constant="50" id="uQm-iW-mC2"/>
                             <constraint firstItem="b0M-eU-Waw" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="w1Q-lo-84C"/>
                             <constraint firstItem="Tfp-ee-fa3" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="w5m-Is-Ptm"/>
                             <constraint firstItem="Tfp-ee-fa3" firstAttribute="trailing" secondItem="MHs-bk-Eqv" secondAttribute="trailing" id="wQh-Xb-czh"/>
+                            <constraint firstItem="9O0-vw-E7a" firstAttribute="leading" secondItem="MHs-bk-Eqv" secondAttribute="leading" id="y1I-YU-FXm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHs-bk-Eqv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="tb_profile" id="J4D-CA-DvY"/>
                     <connections>
+                        <outlet property="btn_log_out" destination="VHd-WW-3h3" id="gKx-ea-zAf"/>
                         <outlet property="img_city" destination="b0M-eU-Waw" id="nX0-yu-lXy"/>
                         <outlet property="img_user_avatar" destination="ise-he-9nu" id="H46-7I-Qqf"/>
+                        <outlet property="scr_view_info" destination="9O0-vw-E7a" id="xRd-PL-dhD"/>
                         <outlet property="txt_fld_name" destination="aCU-tM-ntV" id="3Nr-pj-4LB"/>
+                        <segue destination="CpO-hP-jOV" kind="showDetail" identifier="sw_tab_login" id="HbI-sJ-DDh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1n-Pk-AVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -505,7 +530,7 @@
         <image name="tb_profile" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="egO-er-aSf"/>
-        <segue reference="epH-uC-1H4"/>
+        <segue reference="oh6-GL-NZL"/>
+        <segue reference="HbI-sJ-DDh"/>
     </inferredMetricsTieBreakers>
 </document>
