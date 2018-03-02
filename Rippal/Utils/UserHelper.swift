@@ -78,6 +78,9 @@ final class UserHelper {
         } else {
             LinkedInHelper.sharedInstance.getProfilePictureUrl(successBlock: { response in
                 if response?.statusCode == 200 {
+                    if response!.data! == "null" {
+                        return      // No url available
+                    }
                     let rawArray = StringHelper.sharedInstance.jsonStringToDict(input: response!.data)!["values"]
                     var url = rawArray.map({ item -> String in
                         return String(describing: item)
