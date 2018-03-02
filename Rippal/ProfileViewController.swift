@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
         
         let parentViewController: TabBarController = parent as! TabBarController
         txt_fld_name.text = parentViewController.firstName! + " " + parentViewController.lastName!
+        txt_fld_name.isEnabled = false
         
         // TODO: remove
         NSLog("ProfileView Loaded")
