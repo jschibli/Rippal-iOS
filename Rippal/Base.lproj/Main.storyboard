@@ -547,14 +547,48 @@
                                                     <constraint firstAttribute="trailing" secondItem="eUS-1m-zne" secondAttribute="trailing" constant="8" id="z8c-io-Rmj"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-Kj-7Z5">
+                                                <rect key="frame" x="0.0" y="124" width="374" height="50"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pf_position" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-3J-nxW">
+                                                        <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="TmK-GQ-eXl"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Any Position" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoY-mC-h3s">
+                                                        <rect key="frame" x="66" y="0.0" width="300" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="C3z-3J-q9l"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="email"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="VoY-mC-h3s" secondAttribute="bottom" id="5ww-TD-pRj"/>
+                                                    <constraint firstItem="kf9-3J-nxW" firstAttribute="leading" secondItem="nn3-Kj-7Z5" secondAttribute="leading" constant="8" id="643-7x-DBT"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Ri0-FD-eE1"/>
+                                                    <constraint firstItem="VoY-mC-h3s" firstAttribute="top" secondItem="nn3-Kj-7Z5" secondAttribute="top" id="c2s-Q6-ETJ"/>
+                                                    <constraint firstItem="VoY-mC-h3s" firstAttribute="leading" secondItem="kf9-3J-nxW" secondAttribute="trailing" constant="8" id="dfi-N0-rfl"/>
+                                                    <constraint firstItem="kf9-3J-nxW" firstAttribute="top" secondItem="nn3-Kj-7Z5" secondAttribute="top" id="gyS-5Z-xjw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kf9-3J-nxW" secondAttribute="bottom" id="h1T-Qr-zhm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VoY-mC-h3s" secondAttribute="trailing" constant="8" id="lQg-jT-Cgk"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="IoL-Iu-qR7" secondAttribute="trailing" id="Atr-ki-EOp"/>
+                                            <constraint firstAttribute="trailing" secondItem="nn3-Kj-7Z5" secondAttribute="trailing" id="YXy-y0-xdN"/>
                                             <constraint firstAttribute="trailing" secondItem="16U-7x-0CY" secondAttribute="trailing" id="Yk1-bG-1v9"/>
+                                            <constraint firstItem="nn3-Kj-7Z5" firstAttribute="top" secondItem="IoL-Iu-qR7" secondAttribute="bottom" constant="8" id="Z7G-zU-8EJ"/>
                                             <constraint firstItem="16U-7x-0CY" firstAttribute="top" secondItem="t2p-Ed-PiF" secondAttribute="top" constant="8" id="fS6-SE-i4o"/>
                                             <constraint firstItem="16U-7x-0CY" firstAttribute="leading" secondItem="t2p-Ed-PiF" secondAttribute="leading" id="jZo-Fz-i5b"/>
                                             <constraint firstItem="IoL-Iu-qR7" firstAttribute="leading" secondItem="t2p-Ed-PiF" secondAttribute="leading" id="jyn-S3-xMa"/>
+                                            <constraint firstItem="nn3-Kj-7Z5" firstAttribute="leading" secondItem="t2p-Ed-PiF" secondAttribute="leading" id="l0R-RW-wLp"/>
                                             <constraint firstItem="IoL-Iu-qR7" firstAttribute="top" secondItem="16U-7x-0CY" secondAttribute="bottom" constant="8" id="s5s-Lu-fgO"/>
                                         </constraints>
                                     </view>
@@ -600,6 +634,7 @@
                         <outlet property="txt_fld_name" destination="aCU-tM-ntV" id="3Nr-pj-4LB"/>
                         <outlet property="txt_viw_email" destination="eUS-1m-zne" id="xgr-SI-v7D"/>
                         <outlet property="txt_viw_location" destination="Atu-Gq-FN2" id="7LC-fz-ZHv"/>
+                        <outlet property="txt_viw_position" destination="VoY-mC-h3s" id="OfS-0R-Ubu"/>
                         <segue destination="CpO-hP-jOV" kind="showDetail" identifier="sw_tab_login" id="HbI-sJ-DDh"/>
                     </connections>
                 </viewController>
@@ -613,13 +648,14 @@
         <image name="generic_buildings" width="940" height="583"/>
         <image name="pf_email" width="100" height="100"/>
         <image name="pf_homebase" width="100" height="100"/>
+        <image name="pf_position" width="100" height="100"/>
         <image name="tb_calendar" width="30" height="30"/>
         <image name="tb_explore" width="30" height="30"/>
         <image name="tb_home" width="30" height="30"/>
         <image name="tb_profile" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oh6-GL-NZL"/>
+        <segue reference="epH-uC-1H4"/>
         <segue reference="HbI-sJ-DDh"/>
     </inferredMetricsTieBreakers>
 </document>

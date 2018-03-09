@@ -15,8 +15,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var txt_fld_name: UITextField!
     @IBOutlet weak var btn_log_out: UIButton!
     
-    @IBOutlet weak var txt_viw_location: UITextView!
     @IBOutlet weak var txt_viw_email: UITextView!
+    @IBOutlet weak var txt_viw_location: UITextView!
+    @IBOutlet weak var txt_viw_position: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +34,7 @@ class ProfileViewController: UIViewController {
         
         txt_viw_email.text = parentViewController.email
         
-        loadMoreInfo()
-        
-        // TODO: remove
-        NSLog("ProfileView Loaded")
+        loadMoreInfo()      // position and location
     }
     
     /* Async */
@@ -57,7 +55,7 @@ class ProfileViewController: UIViewController {
         
         let userInfo = UserHelper.sharedInstance.loadUserInfo()
         txt_viw_location.text = userInfo[4]
-        // TODO: position
+        txt_viw_position.text = userInfo[5]
     }
     
     @IBAction func btnLogOutPressed(_ sender: Any) {
