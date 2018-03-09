@@ -39,11 +39,13 @@ final class UserHelper {
         currentVC.performSegue(withIdentifier: "sw_tab_login", sender: sender)
     }
     
-    func cacheUserInfo(email: String, firstName: String, lastName: String, id: String) {
+    func cacheUserInfo(email: String, firstName: String, lastName: String, id: String, location: String, position: String) {
         UserDefaults.standard.set(email, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)
         UserDefaults.standard.set(firstName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)
         UserDefaults.standard.set(lastName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)
         UserDefaults.standard.set(id, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)
+        UserDefaults.standard.set(location, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_location")!)
+        UserDefaults.standard.set(position, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_position")!)
     }
     
     func loadUserInfo() -> [String] {
@@ -52,6 +54,8 @@ final class UserHelper {
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)!)
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)!)
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_location")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_position")!)!)
         return retArr
     }
     
@@ -79,6 +83,7 @@ final class UserHelper {
             LinkedInHelper.sharedInstance.getProfilePictureUrl(successBlock: { response in
                 if response?.statusCode == 200 {
                     if response!.data! == "null" {
+                        NSLog("Did not return data")
                         return      // No url available
                     }
                     let rawArray = StringHelper.sharedInstance.jsonStringToDict(input: response!.data)!["values"]

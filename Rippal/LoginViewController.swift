@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     var firstName: String?
     var lastName: String?
     var id: String?
+    var location: String?
+    var position: String?
     
     var throughLinkedIn: Bool = false           // Whether user signs up/logs in with LinkedIn or signs up from scratch
     
@@ -51,6 +53,16 @@ class LoginViewController: UIViewController {
                 self.firstName = userInfo!["firstName"] as? String
                 self.lastName = userInfo!["lastName"] as? String
                 self.id = userInfo!["id"] as? String
+                let locDict = userInfo!["location"]! as! [String:AnyObject]
+                self.location = locDict["name"] as? String
+                var positions = userInfo!["positions"]! as! [String:AnyObject]
+                if let values = positions["values"] as? [[String:Any]] {
+                    self.position = values[0]["title"]! as? String
+                } else {
+                    // Use localised string
+                    self.position = "Unknown"
+                }
+                
                 NetworkHelper.sharedInstance.checkUserExists(email: self.email!, completionHandler: { response in
                     if response.response?.statusCode != 200 {       // User not found
                         NSLog("User not found")
@@ -109,6 +121,8 @@ class LoginViewController: UIViewController {
                 destinationVC.lastName = lastName!
                 destinationVC.firstName = firstName!
                 destinationVC.id = id!
+                destinationVC.location = location!
+                destinationVC.position = position!
             }
             break
         case "sw_login_tab":
@@ -117,6 +131,8 @@ class LoginViewController: UIViewController {
             destinationVC.lastName = lastName
             destinationVC.firstName = firstName
             destinationVC.id = id
+            destinationVC.location = location
+            destinationVC.position = position
             break
         default:
             break

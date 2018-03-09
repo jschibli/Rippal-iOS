@@ -497,13 +497,13 @@
                                                             <constraint firstAttribute="width" constant="50" id="mJt-1b-Qx0"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Anywhere" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atu-Gq-FN2">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Anywhere" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atu-Gq-FN2">
                                                         <rect key="frame" x="66" y="0.0" width="300" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="pxw-JH-Fqm"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -517,12 +517,45 @@
                                                     <constraint firstItem="Atu-Gq-FN2" firstAttribute="top" secondItem="16U-7x-0CY" secondAttribute="top" id="tec-a3-xhq"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoL-Iu-qR7">
+                                                <rect key="frame" x="0.0" y="66" width="374" height="50"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pf_email" translatesAutoresizingMaskIntoConstraints="NO" id="7gW-gG-72g">
+                                                        <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="uQJ-Jl-oav"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Anymail" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUS-1m-zne">
+                                                        <rect key="frame" x="66" y="0.0" width="300" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="te2-y5-K3l"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="email"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="eUS-1m-zne" secondAttribute="bottom" id="02m-Lu-mi2"/>
+                                                    <constraint firstItem="7gW-gG-72g" firstAttribute="leading" secondItem="IoL-Iu-qR7" secondAttribute="leading" constant="8" id="3gx-Vn-OHY"/>
+                                                    <constraint firstItem="eUS-1m-zne" firstAttribute="leading" secondItem="7gW-gG-72g" secondAttribute="trailing" constant="8" id="CP3-Da-Efd"/>
+                                                    <constraint firstItem="eUS-1m-zne" firstAttribute="top" secondItem="IoL-Iu-qR7" secondAttribute="top" id="Pcw-dt-ao4"/>
+                                                    <constraint firstItem="7gW-gG-72g" firstAttribute="top" secondItem="IoL-Iu-qR7" secondAttribute="top" id="QjP-Jd-Gg2"/>
+                                                    <constraint firstAttribute="height" constant="50" id="e5G-qs-Y1o"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7gW-gG-72g" secondAttribute="bottom" id="fCl-ic-qLH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eUS-1m-zne" secondAttribute="trailing" constant="8" id="z8c-io-Rmj"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="IoL-Iu-qR7" secondAttribute="trailing" id="Atr-ki-EOp"/>
                                             <constraint firstAttribute="trailing" secondItem="16U-7x-0CY" secondAttribute="trailing" id="Yk1-bG-1v9"/>
                                             <constraint firstItem="16U-7x-0CY" firstAttribute="top" secondItem="t2p-Ed-PiF" secondAttribute="top" constant="8" id="fS6-SE-i4o"/>
                                             <constraint firstItem="16U-7x-0CY" firstAttribute="leading" secondItem="t2p-Ed-PiF" secondAttribute="leading" id="jZo-Fz-i5b"/>
+                                            <constraint firstItem="IoL-Iu-qR7" firstAttribute="leading" secondItem="t2p-Ed-PiF" secondAttribute="leading" id="jyn-S3-xMa"/>
+                                            <constraint firstItem="IoL-Iu-qR7" firstAttribute="top" secondItem="16U-7x-0CY" secondAttribute="bottom" constant="8" id="s5s-Lu-fgO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -565,6 +598,8 @@
                         <outlet property="img_city" destination="b0M-eU-Waw" id="nX0-yu-lXy"/>
                         <outlet property="img_user_avatar" destination="ise-he-9nu" id="H46-7I-Qqf"/>
                         <outlet property="txt_fld_name" destination="aCU-tM-ntV" id="3Nr-pj-4LB"/>
+                        <outlet property="txt_viw_email" destination="eUS-1m-zne" id="xgr-SI-v7D"/>
+                        <outlet property="txt_viw_location" destination="Atu-Gq-FN2" id="7LC-fz-ZHv"/>
                         <segue destination="CpO-hP-jOV" kind="showDetail" identifier="sw_tab_login" id="HbI-sJ-DDh"/>
                     </connections>
                 </viewController>
@@ -576,6 +611,7 @@
     <resources>
         <image name="generic_avatar" width="300" height="300"/>
         <image name="generic_buildings" width="940" height="583"/>
+        <image name="pf_email" width="100" height="100"/>
         <image name="pf_homebase" width="100" height="100"/>
         <image name="tb_calendar" width="30" height="30"/>
         <image name="tb_explore" width="30" height="30"/>

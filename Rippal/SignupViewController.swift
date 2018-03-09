@@ -26,6 +26,8 @@ class SignupViewController: UIViewController {
     var firstName: String?
     var lastName: String?
     var id: String?
+    var location: String?
+    var position: String?
     
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
@@ -129,6 +131,8 @@ class SignupViewController: UIViewController {
             destinationVC.lastName = lastName
             destinationVC.firstName = firstName
             destinationVC.id = id
+            destinationVC.location = location
+            destinationVC.position = position
             break
         default:
             break

@@ -15,6 +15,8 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     var firstName: String?
     var lastName: String?
     var id: String?
+    var location: String?
+    var position: String?
     
     var locationManager: CLLocationManager!
     
@@ -25,14 +27,16 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
-        if email != nil && firstName != nil && lastName != nil && id != nil {
-            UserHelper.sharedInstance.cacheUserInfo(email: email!, firstName: firstName!, lastName: lastName!, id: id!)
+        if email != nil && firstName != nil && lastName != nil && id != nil && location != nil && position != nil {
+            UserHelper.sharedInstance.cacheUserInfo(email: email!, firstName: firstName!, lastName: lastName!, id: id!, location: location!, position: position!)
         } else {
             let infoArr: [String] = UserHelper.sharedInstance.loadUserInfo()
             email = infoArr[0]
             firstName = infoArr[1]
             lastName = infoArr[2]
             id = infoArr[3]
+            location = infoArr[4]
+            position = infoArr[5]
         }
     }
     

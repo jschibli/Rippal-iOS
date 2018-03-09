@@ -13,8 +13,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var img_city: UIImageView!
     @IBOutlet weak var img_user_avatar: UIImageView!
     @IBOutlet weak var txt_fld_name: UITextField!
-    @IBOutlet weak var scr_view_info: UIScrollView!
     @IBOutlet weak var btn_log_out: UIButton!
+    
+    @IBOutlet weak var txt_viw_location: UITextView!
+    @IBOutlet weak var txt_viw_email: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class ProfileViewController: UIViewController {
         txt_fld_name.text = parentViewController.firstName! + " " + parentViewController.lastName!
         txt_fld_name.isEnabled = false
         
+        txt_viw_email.text = parentViewController.email
+        
+        loadMoreInfo()
+        
         // TODO: remove
         NSLog("ProfileView Loaded")
     }
@@ -42,7 +48,16 @@ class ProfileViewController: UIViewController {
         UserHelper.sharedInstance.fetchAvatar { image in
             self.img_user_avatar.image = image
         }
+    }
+    
+    func loadMoreInfo() {
+        if !UserHelper.sharedInstance.isLoggedIn() {
+            return
+        }
         
+        let userInfo = UserHelper.sharedInstance.loadUserInfo()
+        txt_viw_location.text = userInfo[4]
+        // TODO: position
     }
     
     @IBAction func btnLogOutPressed(_ sender: Any) {
