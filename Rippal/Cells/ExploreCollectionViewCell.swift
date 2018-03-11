@@ -13,12 +13,14 @@ class ExploreCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
     
-    func displayContent(cityImage: String, cityName: String) {
+    func displayContent(cityImage: UIImage, cityName: String) {
         // TODO: download image async
-        cityImageView.image = UIImage(named: "tb_explore")
-//        cityImageView.image = cityImage
+        cityImageView.image = cityImage
+        cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
+        cityImageView.layer.masksToBounds = false
+        cityImageView.clipsToBounds = true
+        
         cityNameLabel.text = cityName
-        // TODO:
     }
     
 }

@@ -166,7 +166,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRQ-GL-YjQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                                                    <rect key="frame" x="10" y="0.0" width="130" height="130"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-Xh-YsP">
                                                     <rect key="frame" x="35" y="129.5" width="80" height="20.5"/>
@@ -180,9 +180,9 @@
                                             <constraint firstItem="lXj-Xh-YsP" firstAttribute="centerX" secondItem="2RO-Hg-jff" secondAttribute="centerX" id="5T3-DS-ghk"/>
                                             <constraint firstAttribute="bottom" secondItem="lXj-Xh-YsP" secondAttribute="bottom" id="N2e-2s-LXq"/>
                                             <constraint firstAttribute="bottom" secondItem="pRQ-GL-YjQ" secondAttribute="bottom" constant="20" id="SSh-b0-c6x"/>
+                                            <constraint firstItem="pRQ-GL-YjQ" firstAttribute="leading" secondItem="2RO-Hg-jff" secondAttribute="leading" constant="10" id="Y3B-IK-WAT"/>
                                             <constraint firstItem="pRQ-GL-YjQ" firstAttribute="top" secondItem="2RO-Hg-jff" secondAttribute="top" id="Y3Q-ro-Lac"/>
-                                            <constraint firstAttribute="trailing" secondItem="pRQ-GL-YjQ" secondAttribute="trailing" id="gd5-Mg-Ggp"/>
-                                            <constraint firstItem="pRQ-GL-YjQ" firstAttribute="leading" secondItem="2RO-Hg-jff" secondAttribute="leading" id="x5N-Nn-cbr"/>
+                                            <constraint firstAttribute="trailing" secondItem="pRQ-GL-YjQ" secondAttribute="trailing" constant="10" id="a6p-2t-EFy"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="cityImageView" destination="pRQ-GL-YjQ" id="FrN-Cz-eB8"/>

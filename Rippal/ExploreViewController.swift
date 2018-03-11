@@ -21,14 +21,14 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Set the date to today
         dateShown.text = DateHelper.sharedInstance.constructExploreDateString(date: Date())
         
-        store.cities.append(City(imageUrl: "123", cityName: "City1"))
-        store.cities.append(City(imageUrl: "123", cityName: "City2"))
-        store.cities.append(City(imageUrl: "123", cityName: "City3"))
-        store.cities.append(City(imageUrl: "123", cityName: "City4"))
-        store.cities.append(City(imageUrl: "123", cityName: "City5"))
-        store.cities.append(City(imageUrl: "123", cityName: "City6"))
-        store.cities.append(City(imageUrl: "123", cityName: "City7"))
-        store.cities.append(City(imageUrl: "123", cityName: "City8"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_atlanta"), imageUrl: nil, cityName: "Atlanta"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_boston"), imageUrl: nil, cityName: "Boston"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_dallas"), imageUrl: nil, cityName: "Dallas"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_denver"), imageUrl: nil, cityName: "Denver"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_minneapolis"), imageUrl: nil, cityName: "Minneapolis"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_philadelphia"), imageUrl: nil, cityName: "Philadelphia"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_san_francisco"), imageUrl: nil, cityName: "San Francisco"))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_seattle"), imageUrl: nil, cityName: "Seattle"))
         
         store.loadCities {
             self.collectionView.reloadSections(IndexSet(integer: 0))
@@ -53,7 +53,7 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCollectionViewCell", for: indexPath) as! ExploreCollectionViewCell
         
         let city = store.cities[indexPath.row]
-        cell.displayContent(cityImage: city.imageUrl, cityName: city.cityName)
+        cell.displayContent(cityImage: city.image, cityName: city.cityName)
         
         return cell;
     }

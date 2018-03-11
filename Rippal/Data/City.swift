@@ -6,7 +6,10 @@
 //  Copyright © 2018 Rippal. All rights reserved.
 //
 
+import UIKit
+
 struct City {
-    let imageUrl: String
+    let image: UIImage
+    let imageUrl: String?
     let cityName: String
 }
