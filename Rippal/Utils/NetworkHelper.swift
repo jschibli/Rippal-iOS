@@ -80,4 +80,15 @@ final class NetworkHelper {
             .response(completionHandler: completionHandler)
     }
     
+    func logIn(email: String, password: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
+        let params:[String: String] = [
+            "email": email,
+            "password": password
+        ]
+        manager.request(Constants.paths.base_url + Constants.paths.login, method: .post, parameters: params, encoding: URLEncoding.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .response(completionHandler: completionHandler)
+    }
+    
 }

@@ -119,7 +119,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func btnBackPressed(_ sender: Any) {
-        performSegue(withIdentifier: "sw_signup_login", sender: sender)
+        performSegue(withIdentifier: "sw_signup_entry", sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

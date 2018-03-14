@@ -36,7 +36,7 @@ final class UserHelper {
         UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)
         UserDefaults.standard.set(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_cached_avatar")!)  // Clear saved avatar
         
-        currentVC.performSegue(withIdentifier: "sw_tab_login", sender: sender)
+        currentVC.performSegue(withIdentifier: "sw_tab_entry", sender: sender)
     }
     
     func cacheUserInfo(email: String, firstName: String, lastName: String, id: String, location: String, position: String) {

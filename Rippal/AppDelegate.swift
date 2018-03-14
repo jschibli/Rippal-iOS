@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserHelper.sharedInstance.isLoggedIn() {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
         } else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "EntryVC")
         }
         
         self.window?.rootViewController = initialViewController
