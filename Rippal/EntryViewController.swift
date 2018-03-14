@@ -71,7 +71,8 @@ class EntryViewController: UIViewController {
                         self.performSegue(withIdentifier: "sw_entry_signup", sender: sender)
                     } else {        // Found user
                         NSLog("Found user")
-                        NetworkHelper.sharedInstance.updateUserInfo(email: self.email!, firstName: self.firstName!, lastName: self.lastName!, id: self.id!, completionHandler: { response in
+                        UserHelper.sharedInstance.cacheUserInfo(email: self.email!, firstName: self.firstName!, lastName: self.lastName!, id: self.id!, location: self.location!, position: self.position!)
+                        NetworkHelper.sharedInstance.updateUserInfo(email: self.email!, firstName: self.firstName!, lastName: self.lastName!, id: self.id!, location: self.location!, position: self.position!, completionHandler: { response in
                             if response.response?.statusCode != 200 {
                                 NSLog("Failed to update user info")
                             }

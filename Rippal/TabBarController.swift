@@ -58,10 +58,6 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
             return
         }
         
-//        NSLog("Access token here: \(accessToken)")
-//        LinkedInHelper.sharedInstance.resumeSession(accessToken)
-//        NSLog("Session resumed")
-        
         NetworkHelper.sharedInstance.checkServerRunning { response in
             if response.response?.statusCode == 200 {
                 serverRunning = true

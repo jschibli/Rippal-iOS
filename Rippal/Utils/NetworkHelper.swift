@@ -53,12 +53,14 @@ final class NetworkHelper {
             .response(completionHandler: completionHandler)
     }
     
-    func updateUserInfo(email: String, firstName: String, lastName: String, id: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
+    func updateUserInfo(email: String, firstName: String, lastName: String, id: String, location: String, position: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
         let params:[String: String] = [
             "email": email,
             "firstName": firstName,
             "lastName": lastName,
-            "id": id
+            "userId": id,
+            "location": location,
+            "position": position
         ]
         manager.request(Constants.paths.base_url + Constants.paths.update, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil)
             .validate(statusCode: 200..<300)
@@ -66,13 +68,15 @@ final class NetworkHelper {
             .response(completionHandler: completionHandler)
     }
     
-    func signUp(email: String, password: String, firstName: String, lastName: String, id: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
+    func signUp(email: String, password: String, firstName: String, lastName: String, id: String, location: String, position: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
         let params:[String: String] = [
             "email": email,
             "password": password,
             "firstName": firstName,
             "lastName": lastName,
-            "id": id
+            "userId": id,
+            "location": location,
+            "position": position
         ]
         manager.request(Constants.paths.base_url + Constants.paths.register, method: .post, parameters: params, encoding: URLEncoding.default)
             .validate(statusCode: 200..<300)
