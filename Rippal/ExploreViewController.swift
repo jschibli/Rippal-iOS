@@ -37,6 +37,7 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // TODO: remove
         NSLog("ExploreView Loaded")
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +45,10 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Dispose of any resources that can be recreated.
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO:
+        NSLog("Selected: \(indexPath.row)")
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return store.cities.count
@@ -56,6 +61,10 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.displayContent(cityImage: city.image, cityName: city.cityName)
         
         return cell;
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
