@@ -86,17 +86,9 @@ final class UserHelper {
                         NSLog("Did not return data")
                         return      // No url available
                     }
-                    let rawArray = StringHelper.sharedInstance.jsonStringToDict(input: response!.data)!["values"]
-                    var url = rawArray.map({ item -> String in
-                        return String(describing: item)
-                    })
-                    url = url!.replacingOccurrences(of: "\"", with: "")
-                    url = url!.replacingOccurrences(of: "(", with: "")
-                    url = url!.replacingOccurrences(of: ")", with: "")
-                    url = url!.replacingOccurrences(of: "\n", with: "")
-                    url = url!.trimmingCharacters(in: .whitespaces)
+                    let url = StringHelper.sharedInstance.jsonStringToDict(input: response!.data)!["pictureUrl"] as! String
                     
-                    Alamofire.request(url!).responseImage { response in
+                    Alamofire.request(url).responseImage { response in
                         if let image = response.result.value {
                             callback(image)
                             self.saveAvatarCache(image)
@@ -105,6 +97,7 @@ final class UserHelper {
                 }
             }) { error in
                 // Do nothing
+                NSLog("\(String(describing: error))")
             }
         }
     }

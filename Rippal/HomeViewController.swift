@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         // TODO: remove
         NSLog("HomeView Loaded")
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 

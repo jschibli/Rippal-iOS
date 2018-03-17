@@ -55,6 +55,6 @@ final class LinkedInHelper {
     }
     
     func getProfilePictureUrl(successBlock: @escaping (LISDKAPIResponse?) -> Void, errorBlock: @escaping (LISDKAPIError?) -> Void) {
-        LISDKAPIHelper.sharedInstance().getRequest("https://api.linkedin.com/v1/people/~/picture-urls::(original)", success: successBlock, error: errorBlock)
+        LISDKAPIHelper.sharedInstance().getRequest("https://api.linkedin.com/v1/people/~:(picture-url)?format=json", success: successBlock, error: errorBlock)
     }
 }
