@@ -41,20 +41,19 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // TODO: use localised strings instead
-        var actions: [UIAlertAction] = [];
-        actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
-        actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
-            NSLog("Action: \(action)")
-            LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
-                let session = LISDKSessionManager.sharedInstance().session!
-                LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
-            }, errorBlock: { error in
-                // Do nothing
-            })
-        }))
-        
         if !LinkedInHelper.sharedInstance.hasSession() {
+            // TODO: use localised strings instead
+            var actions: [UIAlertAction] = [];
+            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+            actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
+                NSLog("Action: \(action)")
+                LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
+                    let session = LISDKSessionManager.sharedInstance().session!
+                    LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
+                }, errorBlock: { error in
+                    // Do nothing
+                })
+            }))
             NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
             selectedIndex = 3
             if let items =  self.tabBarController?.tabBar.items {
@@ -74,6 +73,8 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
                 serverRunning = false
                 NSLog("Server is NOT running")
                 // TODO: use localised strings instead
+                var actions: [UIAlertAction] = [];
+                actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
                 NotificationHelper.sharedInstance.showAlert(title: "Server Is Down", message: "Cannot connect to Rippal server, some functionalities might be limited", actions: actions, context: self)
             }
         }
