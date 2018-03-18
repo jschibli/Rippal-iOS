@@ -52,7 +52,6 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     @objc func openLinkedInTapped() {
-        NSLog("\(self.id)")
         if let url = URL(string: "linkedin://profile/\(self.id)") {
             UIApplication.shared.open(url)
         }

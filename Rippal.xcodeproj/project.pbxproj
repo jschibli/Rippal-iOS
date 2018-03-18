@@ -14,6 +14,7 @@
 		760D7DBE201BB2D500145870 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBD201BB2D500145870 /* DataStore.swift */; };
 		760D7DC0201D350300145870 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBF201D350300145870 /* Connection.swift */; };
 		760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DC1201D3A2E00145870 /* TabBarController.swift */; };
+		7636CB18205EF1B10023E2CA /* SingleCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636CB17205EF1B10023E2CA /* SingleCityViewController.swift */; };
 		764D139C205E41FE004A07FC /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D139B205E41FE004A07FC /* HomeTableViewCell.swift */; };
 		764DE5532058DED1003E784D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764DE5522058DED1003E784D /* LoginViewController.swift */; };
 		764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDEF20170E0600F179AE /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		760D7DBD201BB2D500145870 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		760D7DBF201D350300145870 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		760D7DC1201D3A2E00145870 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7636CB17205EF1B10023E2CA /* SingleCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCityViewController.swift; sourceTree = "<group>"; };
 		764D139B205E41FE004A07FC /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		764DE5522058DED1003E784D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		764ECDEC20170E0600F179AE /* Rippal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rippal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		7636CB16205EF18C0023E2CA /* Embedded */ = {
+			isa = PBXGroup;
+			children = (
+				7636CB17205EF1B10023E2CA /* SingleCityViewController.swift */,
+			);
+			path = Embedded;
+			sourceTree = "<group>";
+		};
 		764ECDE320170E0600F179AE = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 				764ECDF320170E0600F179AE /* ExploreViewController.swift */,
 				76688F682019932300C794F5 /* CalendarViewController.swift */,
 				76688F6A2019933400C794F5 /* ProfileViewController.swift */,
+				7636CB16205EF18C0023E2CA /* Embedded */,
 				760D7DB7201B1D2E00145870 /* Cells */,
 				760D7DBA201BB1F000145870 /* Data */,
 				76BD0A06201D411E0003480C /* Utils */,
@@ -597,6 +608,7 @@
 				764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */,
 				760D7DBC201BB20600145870 /* City.swift in Sources */,
 				76B407C52031EE59005F4CFA /* Constants.swift in Sources */,
+				7636CB18205EF1B10023E2CA /* SingleCityViewController.swift in Sources */,
 				760D7DC0201D350300145870 /* Connection.swift in Sources */,
 				768CB1442031788100AEAEF0 /* LinkedInHelper.swift in Sources */,
 				760D7DBE201BB2D500145870 /* DataStore.swift in Sources */,
