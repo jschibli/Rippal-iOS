@@ -34,6 +34,8 @@ final class DataStore {
         // TODO: pull up locally saved connections
         
         // TODO: check for current location if permission given and refresh city list
+        
+        completion()
     }
     
     func setUser(email: String, firstName: String, lastName: String, id: String) {

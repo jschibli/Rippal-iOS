@@ -14,6 +14,7 @@
 		760D7DBE201BB2D500145870 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBD201BB2D500145870 /* DataStore.swift */; };
 		760D7DC0201D350300145870 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DBF201D350300145870 /* Connection.swift */; };
 		760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D7DC1201D3A2E00145870 /* TabBarController.swift */; };
+		764D139C205E41FE004A07FC /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D139B205E41FE004A07FC /* HomeTableViewCell.swift */; };
 		764DE5532058DED1003E784D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764DE5522058DED1003E784D /* LoginViewController.swift */; };
 		764ECDF020170E0600F179AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDEF20170E0600F179AE /* AppDelegate.swift */; };
 		764ECDF220170E0600F179AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764ECDF120170E0600F179AE /* HomeViewController.swift */; };
@@ -68,6 +69,7 @@
 		760D7DBD201BB2D500145870 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		760D7DBF201D350300145870 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		760D7DC1201D3A2E00145870 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		764D139B205E41FE004A07FC /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		764DE5522058DED1003E784D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		764ECDEC20170E0600F179AE /* Rippal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rippal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764ECDEF20170E0600F179AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				760D7DB8201B1D5900145870 /* ExploreCollectionViewCell.swift */,
+				764D139B205E41FE004A07FC /* HomeTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				764DE5532058DED1003E784D /* LoginViewController.swift in Sources */,
 				760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */,
 				760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */,
+				764D139C205E41FE004A07FC /* HomeTableViewCell.swift in Sources */,
 				76688F692019932300C794F5 /* CalendarViewController.swift in Sources */,
 				768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */,
 				76A69353203D31A300556B2A /* String+capitalizeFirstLetter.swift in Sources */,

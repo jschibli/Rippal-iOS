@@ -8,13 +8,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Mark: Controls
     @IBOutlet weak var cityImage: UIImageView!
     @IBOutlet weak var cityName: UITextView!
     @IBOutlet weak var stackViewContainer: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    let store = DataStore.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +25,24 @@ class HomeViewController: UIViewController {
         
         setupFilterStackView()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        store.connections.append(Connection(linkedInId: "123456", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, name: "Tao Peter Wang"))
+        store.loadConnections {
+            self.tableView.reloadData()
+        }
+                
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
         
         // TODO: remove
         NSLog("HomeView Loaded")
+    }
+
+    func setupCityName() {
+        let parentViewController: TabBarController = parent as! TabBarController
+        cityName.text = parentViewController.location!
     }
     
     func setupFilterStackView() {
@@ -49,10 +63,22 @@ class HomeViewController: UIViewController {
         
         cityName.layer.masksToBounds = true
     }
-
-    func setupCityName() {
-        let parentViewController: TabBarController = parent as! TabBarController
-        cityName.text = parentViewController.location!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO:
+        NSLog("Selected: \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return store.connections.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell", for: indexPath) as! HomeTableViewCell
+        
+        cell.displayContent(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"))
+        
+        return cell
     }
     
     override func didReceiveMemoryWarning() {
