@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
     // Mark: Controls
     @IBOutlet weak var cityImage: UIImageView!
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-        store.connections.append(Connection(linkedInId: "123456", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, name: "Tao Peter Wang"))
+        store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "123456", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, company: "Rippal LLC", location: "Glens Falls, New York", name: "Tao Peter Wang"))
         store.loadConnections {
             self.tableView.reloadData()
         }
@@ -76,7 +76,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell", for: indexPath) as! HomeTableViewCell
         
-        cell.displayContent(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"))
+        let connection = store.connections[indexPath.row]
+        cell.displayContent(profilePhoto: connection.profilePhoto, name: connection.name, location: connection.location, company: connection.company, email: connection.email)
         
         return cell
     }
