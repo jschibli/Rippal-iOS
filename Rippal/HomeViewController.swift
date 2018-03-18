@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-        store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "123456", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, company: "Rippal LLC", location: "Glens Falls, New York", name: "Tao Peter Wang"))
+        store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "XPDyOJeDY2", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, company: "Rippal LLC", location: "Glens Falls, New York", name: "Tao Peter Wang"))
         store.loadConnections {
             self.tableView.reloadData()
         }
@@ -77,7 +77,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell", for: indexPath) as! HomeTableViewCell
         
         let connection = store.connections[indexPath.row]
-        cell.displayContent(profilePhoto: connection.profilePhoto, name: connection.name, location: connection.location, company: connection.company, email: connection.email)
+        cell.displayContent(profilePhoto: connection.profilePhoto, name: connection.name, location: connection.location, company: connection.company, email: connection.email, id: connection.linkedInId)
         
         return cell
     }

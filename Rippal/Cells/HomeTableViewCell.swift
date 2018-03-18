@@ -19,8 +19,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var userLocation: UILabel!
     
     var email: String = ""
+    var id: String = ""
     
-    func displayContent(profilePhoto: UIImage, name: String, location: String, company: String, email: String) {
+    func displayContent(profilePhoto: UIImage, name: String, location: String, company: String, email: String, id: String) {
         // Profile image
         userPhoto.image = profilePhoto
         userPhoto.layer.cornerRadius = userPhoto.frame.height / 2
@@ -41,6 +42,7 @@ class HomeTableViewCell: UITableViewCell {
         openLinkedIn.addGestureRecognizer(openLinkedInTapGestureRecognizer)
         
         self.email = email
+        self.id = id
     }
     
     @objc func sendEmailTapped() {
@@ -50,7 +52,9 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     @objc func openLinkedInTapped() {
-        // TODO:
-        NSLog("Open linkedin")
+        NSLog("\(self.id)")
+        if let url = URL(string: "linkedin://profile/\(self.id)") {
+            UIApplication.shared.open(url)
+        }
     }
 }
