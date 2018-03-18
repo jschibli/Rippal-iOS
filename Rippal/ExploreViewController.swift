@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ExploreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var dateShown: UITextView!
@@ -21,15 +21,14 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Set the date to today
         dateShown.text = DateHelper.sharedInstance.constructExploreDateString(date: Date())
         
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_atlanta"), imageUrl: nil, cityName: "Atlanta"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_boston"), imageUrl: nil, cityName: "Boston"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_dallas"), imageUrl: nil, cityName: "Dallas"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_denver"), imageUrl: nil, cityName: "Denver"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_minneapolis"), imageUrl: nil, cityName: "Minneapolis"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_philadelphia"), imageUrl: nil, cityName: "Philadelphia"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_san_francisco"), imageUrl: nil, cityName: "San Francisco"))
-        store.cities.append(City(image: #imageLiteral(resourceName: "ex_seattle"), imageUrl: nil, cityName: "Seattle"))
-        
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_atlanta"), imageUrl: nil, cityName: "Atlanta", lat: 84.3880, lng: 33.7490))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_boston"), imageUrl: nil, cityName: "Boston", lat: 71.0589, lng: 42.3601))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_dallas"), imageUrl: nil, cityName: "Dallas", lat: 96.7970, lng: 32.7767))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_denver"), imageUrl: nil, cityName: "Denver", lat: 104.9903, lng: 39.7392))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_minneapolis"), imageUrl: nil, cityName: "Minneapolis", lat: 93.2650, lng: 44.9778))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_philadelphia"), imageUrl: nil, cityName: "Philadelphia", lat: 75.1652, lng: 39.9526))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_san_francisco"), imageUrl: nil, cityName: "San Francisco", lat: 122.4194, lng: 37.7749))
+        store.cities.append(City(image: #imageLiteral(resourceName: "ex_seattle"), imageUrl: nil, cityName: "Seattle", lat: 122.3321, lng: 47.6062))
         store.loadCities {
             self.collectionView.reloadSections(IndexSet(integer: 0))
         }
@@ -37,7 +36,10 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // TODO: remove
         NSLog("ExploreView Loaded")
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tapGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGestureRecognizer)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,4 +12,6 @@ struct City {
     let image: UIImage
     let imageUrl: String?
     let cityName: String
+    let lat: Double
+    let lng: Double
 }
