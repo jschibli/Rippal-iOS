@@ -19,12 +19,30 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCityName()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tapGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGestureRecognizer)
+        
         // TODO: remove
         NSLog("HomeView Loaded")
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
     }
 
+    func setupCityName() {
+        let parentViewController: TabBarController = parent as! TabBarController
+        cityName.text = parentViewController.location!
+        
+        // Add a bottom border
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = UIColor.black.cgColor
+        border.frame = CGRect(x: 0, y: cityName.frame.size.height - width, width: cityName.frame.size.width, height: cityName.frame.size.height)
+        border.borderWidth = width
+        cityName.layer.addSublayer(border)
+        cityName.layer.masksToBounds = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

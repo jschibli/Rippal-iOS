@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crO-pf-QoZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_generic_buildings" translatesAutoresizingMaskIntoConstraints="NO" id="crO-pf-QoZ">
                                 <rect key="frame" x="0.0" y="65" width="375" height="120"/>
                                 <color key="backgroundColor" red="0.0" green="0.46666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -41,15 +41,51 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqK-QZ-tqZ">
                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="80"/>
-                                        <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_rippal" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-vm-NRh">
+                                                <rect key="frame" x="35.5" y="15" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="DZ4-Yx-kmg"/>
+                                                    <constraint firstAttribute="width" constant="50" id="pfS-3t-5d8"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="TQm-vm-NRh" firstAttribute="centerX" secondItem="DqK-QZ-tqZ" secondAttribute="centerX" id="3gk-uU-tXS"/>
+                                            <constraint firstItem="TQm-vm-NRh" firstAttribute="centerY" secondItem="DqK-QZ-tqZ" secondAttribute="centerY" id="rA7-e6-KPt"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4t-tA-lWm">
                                         <rect key="frame" x="126.5" y="0.0" width="122" height="80"/>
-                                        <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="2nx-2I-NbO">
+                                                <rect key="frame" x="36" y="15" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="v5R-TG-eig"/>
+                                                    <constraint firstAttribute="width" constant="50" id="vIP-cH-ar4"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2nx-2I-NbO" firstAttribute="centerX" secondItem="B4t-tA-lWm" secondAttribute="centerX" id="4m1-wH-9OR"/>
+                                            <constraint firstItem="2nx-2I-NbO" firstAttribute="centerY" secondItem="B4t-tA-lWm" secondAttribute="centerY" id="yBD-aY-CdF"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHz-ad-XnA">
                                         <rect key="frame" x="253.5" y="0.0" width="121.5" height="80"/>
-                                        <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_midd" translatesAutoresizingMaskIntoConstraints="NO" id="4al-8K-BLo">
+                                                <rect key="frame" x="35.5" y="15" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Fst-Sy-Kl3"/>
+                                                    <constraint firstAttribute="height" constant="50" id="S06-rp-l4h"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="4al-8K-BLo" firstAttribute="centerX" secondItem="HHz-ad-XnA" secondAttribute="centerX" id="j57-2k-th4"/>
+                                            <constraint firstItem="4al-8K-BLo" firstAttribute="centerY" secondItem="HHz-ad-XnA" secondAttribute="centerY" id="nZ2-iZ-PVO"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -538,13 +574,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic_buildings" translatesAutoresizingMaskIntoConstraints="NO" id="b0M-eU-Waw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pf_generic_buildings" translatesAutoresizingMaskIntoConstraints="NO" id="b0M-eU-Waw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="CZc-g4-39Z"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ise-he-9nu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pf_generic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ise-he-9nu">
                                 <rect key="frame" x="122" y="125" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="7LT-op-jjR"/>
@@ -744,9 +780,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="generic_avatar" width="300" height="300"/>
-        <image name="generic_buildings" width="940" height="583"/>
+        <image name="hm_generic_buildings" width="5103" height="3320"/>
+        <image name="hm_linkedin" width="100" height="100"/>
+        <image name="hm_midd" width="400" height="400"/>
+        <image name="hm_rippal" width="100" height="100"/>
         <image name="pf_email" width="100" height="100"/>
+        <image name="pf_generic_avatar" width="300" height="300"/>
+        <image name="pf_generic_buildings" width="940" height="583"/>
         <image name="pf_homebase" width="100" height="100"/>
         <image name="pf_position" width="100" height="100"/>
         <image name="tb_calendar" width="30" height="30"/>
