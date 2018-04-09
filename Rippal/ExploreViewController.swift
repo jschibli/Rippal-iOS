@@ -39,7 +39,6 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
-        
     }
 
     override func didReceiveMemoryWarning() {

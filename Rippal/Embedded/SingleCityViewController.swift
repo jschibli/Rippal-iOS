@@ -39,7 +39,7 @@ class SingleCityViewController: UIViewController {
             self.view.alpha = 0.0
         }) { finished in
             for view in (self.parent?.view.subviews)! {
-                if view.tag == 0x26 {
+                if view.tag == 0x26 {                       // Hardcoded tag
                     view.removeFromSuperview()
                 }
             }
