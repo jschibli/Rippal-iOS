@@ -50,7 +50,7 @@ class EntryViewController: UIViewController {
             LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)       // Save session
             
             LinkedInHelper.sharedInstance.getUserInfo(successBlock: { response in
-                let userInfo = StringHelper.sharedInstance.jsonStringToDict(input: (response?.data)!) as Dictionary!
+                let userInfo = StringHelper.sharedInstance.jsonStringToDict(input: (response?.data)!) as Dictionary?
                 self.email = userInfo!["emailAddress"] as? String
                 self.firstName = userInfo!["firstName"] as? String
                 self.lastName = userInfo!["lastName"] as? String
