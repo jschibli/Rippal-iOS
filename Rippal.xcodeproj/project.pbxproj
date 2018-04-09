@@ -33,6 +33,7 @@
 		7669B9292035375D00996F55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7669B9282035375D00996F55 /* User.swift */; };
 		768CB142203176A800AEAEF0 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB141203176A800AEAEF0 /* UserHelper.swift */; };
 		768CB1442031788100AEAEF0 /* LinkedInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CB1432031788100AEAEF0 /* LinkedInHelper.swift */; };
+		769354FE207BF45C006A6B31 /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769354FD207BF45C006A6B31 /* FacebookHelper.swift */; };
 		76A69351203D225000556B2A /* PasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A69350203D225000556B2A /* PasswordHelper.swift */; };
 		76A69353203D31A300556B2A /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A69352203D31A300556B2A /* String+capitalizeFirstLetter.swift */; };
 		76AF7887203189A30026DB8F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AF7886203189A30026DB8F /* NetworkHelper.swift */; };
@@ -95,6 +96,7 @@
 		7669B9282035375D00996F55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		768CB141203176A800AEAEF0 /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		768CB1432031788100AEAEF0 /* LinkedInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInHelper.swift; sourceTree = "<group>"; };
+		769354FD207BF45C006A6B31 /* FacebookHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookHelper.swift; sourceTree = "<group>"; };
 		76A69350203D225000556B2A /* PasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordHelper.swift; sourceTree = "<group>"; };
 		76A69352203D31A300556B2A /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
 		76AF7886203189A30026DB8F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				76B94BFF20203C8F00F52014 /* DateHelper.swift */,
+				769354FD207BF45C006A6B31 /* FacebookHelper.swift */,
 				768CB1432031788100AEAEF0 /* LinkedInHelper.swift */,
 				76AF7886203189A30026DB8F /* NetworkHelper.swift */,
 				76BD0A09201D4B8B0003480C /* NotificationHelper.swift */,
@@ -472,11 +475,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rippal/Pods-Rippal-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,6 +528,7 @@
 				76BD0A08201D416F0003480C /* StringHelper.swift in Sources */,
 				76A69351203D225000556B2A /* PasswordHelper.swift in Sources */,
 				76688F6D2019A15B00C794F5 /* EntryViewController.swift in Sources */,
+				769354FE207BF45C006A6B31 /* FacebookHelper.swift in Sources */,
 				764DE5532058DED1003E784D /* LoginViewController.swift in Sources */,
 				760D7DB9201B1D5900145870 /* ExploreCollectionViewCell.swift in Sources */,
 				760D7DC2201D3A2E00145870 /* TabBarController.swift in Sources */,

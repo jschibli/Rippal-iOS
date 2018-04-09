@@ -1,14 +1,18 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.0'
+platform :ios, '11.3'
+inhibit_all_warnings!
 
 target 'Rippal' do
 	# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 	use_frameworks!
 
 	# Pods for Rippal
-	pod 'Alamofire', '~> 4.5'
-	pod 'AlamofireImage', '~> 3.3'
+	pod 'Alamofire'
+	pod 'AlamofireImage'
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
+	pod 'FacebookShare'
 
 	target 'RippalTests' do
 		inherit! :search_paths
