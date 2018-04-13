@@ -47,12 +47,14 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
             actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
             actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
                 NSLog("Action: \(action)")
-                LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
-                    let session = LISDKSessionManager.sharedInstance().session!
-                    LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
-                }, errorBlock: { error in
-                    // Do nothing
-                })
+                DispatchQueue.main.async {
+                    LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
+                        let session = LISDKSessionManager.sharedInstance().session!
+                        LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
+                    }, errorBlock: { error in
+                        // Do nothing
+                    })
+                }
             }))
             NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
             selectedIndex = 3

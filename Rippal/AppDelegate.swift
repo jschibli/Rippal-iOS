@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Determine whether to go to login screen or home screen
         let initialViewController:UIViewController
-        // TODO: hardcoded to true
         // TODO: check session and session expire in TabBarController
         if UserHelper.sharedInstance.isLoggedIn() {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
@@ -63,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if LISDKCallbackHandler.shouldHandle(url) {
-            return LISDKCallbackHandler.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+            return LISDKCallbackHandler.application(app, open: url, sourceApplication: nil, annotation: nil)
         }
         return true
     }

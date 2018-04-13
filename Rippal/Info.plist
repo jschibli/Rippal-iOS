@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en_US</string>
 	<key>CFBundleDisplayName</key>
 	<string>Rippal</string>
 	<key>CFBundleExecutable</key>
@@ -70,9 +70,10 @@
 		<string>linkedin-sdk</string>
 		<string>linkedin-sdk2</string>
 	</array>
-	<key>NSAppTransportSecurity</key>  
-	<dict>  
-		<key>NSAllowsArbitraryLoads</key><true/>  
-	</dict>  
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

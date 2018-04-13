@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -128,7 +128,6 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pf_generic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-AT-ewH">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="0UQ-3G-Bxq"/>
                                                         <constraint firstAttribute="width" constant="60" id="Cbj-kx-9h0"/>
                                                     </constraints>
                                                 </imageView>
@@ -516,7 +515,7 @@
                         <outlet property="txtFld_password" destination="Lee-hw-y90" id="uTm-gk-G2a"/>
                         <outlet property="txtFld_passwordConfirm" destination="nhv-93-SDZ" id="Xa8-z0-8xf"/>
                         <segue destination="CpO-hP-jOV" kind="showDetail" identifier="sw_signup_entry" id="egO-er-aSf"/>
-                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="sw_signup_tab" action="showViewController:sender:" id="epH-uC-1H4"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="sw_signup_tab" id="epH-uC-1H4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u62-gG-XMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -671,7 +670,7 @@
                         <outlet property="btnSignInLinkedIn" destination="egs-zT-88z" id="wEg-Ti-Z7d"/>
                         <outlet property="btnSignUp" destination="v3a-oh-Nfk" id="enw-Qu-pj9"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="sw_entry_tab" id="oh6-GL-NZL"/>
-                        <segue destination="LCd-ZZ-Wh5" kind="showDetail" identifier="sw_entry_signup" action="showViewController:sender:" id="Xpw-bY-jz6"/>
+                        <segue destination="LCd-ZZ-Wh5" kind="showDetail" identifier="sw_entry_signup" id="Xpw-bY-jz6"/>
                         <segue destination="wIr-bU-yPZ" kind="showDetail" identifier="sw_entry_login" id="PaZ-xo-8yV"/>
                     </connections>
                 </viewController>
