@@ -8,6 +8,7 @@
 
 import CoreLocation
 import UIKit
+import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
+        
+        FacebookCore.SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // TODO: check for location permission
         
@@ -66,7 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if LISDKCallbackHandler.shouldHandle(url) {
             return LISDKCallbackHandler.application(app, open: url, sourceApplication: nil, annotation: nil)
         }
-        return true
+        let handled:Bool = FacebookCore.SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        if handled {
+            return handled
+        }
+        return false
     }
 
 }

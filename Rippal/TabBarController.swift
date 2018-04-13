@@ -43,10 +43,9 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if !LinkedInHelper.sharedInstance.hasSession() {
             // TODO: use localised strings instead
-            var actions: [UIAlertAction] = [];
+            var actions: [UIAlertAction] = []
             actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
             actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
-                NSLog("Action: \(action)")
                 DispatchQueue.main.async {
                     LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
                         let session = LISDKSessionManager.sharedInstance().session!
@@ -58,7 +57,27 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
             }))
             NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
             selectedIndex = 3
-            if let items =  self.tabBarController?.tabBar.items {
+            if let items = self.tabBarController?.tabBar.items {
+                for i in 0 ..< items.count {
+                    let itemToDisable = items[i]
+                    itemToDisable.isEnabled = false
+                }
+            }
+            return
+        }
+        
+        if !FacebookHelper.sharedInstance.isConnectedWithFacebook() {
+            // TODO: use localised strings instead
+            var actions: [UIAlertAction] = []
+            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+            actions.append(UIAlertAction(title: "Connect", style: .`default`, handler: { actions in
+                DispatchQueue.main.async {
+                    FacebookHelper.sharedInstance.connectWithFacebook(vc: self)
+                }
+            }))
+            NotificationHelper.sharedInstance.showAlert(title: "Facebook not connected", message: "You need to connect to your Facebook account to use Rippal", actions: actions, context: self)
+            selectedIndex = 3
+            if let items = self.tabBarController?.tabBar.items {
                 for i in 0 ..< items.count {
                     let itemToDisable = items[i]
                     itemToDisable.isEnabled = false
