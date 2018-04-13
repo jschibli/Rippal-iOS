@@ -12,8 +12,6 @@ final class FacebookHelper {
     
     static let sharedInstance = FacebookHelper()
     
-    private init() {
-        
-    }
+    private init() {}
     
 }
