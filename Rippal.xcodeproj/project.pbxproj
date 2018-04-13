@@ -264,8 +264,8 @@
 				76BD0A09201D4B8B0003480C /* NotificationHelper.swift */,
 				76A69350203D225000556B2A /* PasswordHelper.swift */,
 				76BD0A07201D416F0003480C /* StringHelper.swift */,
-				768CB141203176A800AEAEF0 /* UserHelper.swift */,
 				76A69352203D31A300556B2A /* String+capitalizeFirstLetter.swift */,
+				768CB141203176A800AEAEF0 /* UserHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
