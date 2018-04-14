@@ -35,11 +35,6 @@ class ProfileViewController: UIViewController {
         txt_viw_email.text = parentViewController.email
         
         loadMoreInfo()      // position and location
-        
-        FacebookHelper.sharedInstance.retrieveAllFriendsOnRippal { responseDict in
-            let friends = responseDict["data"] as! NSArray
-            NSLog("Friends: \(friends)")
-        }
     }
     
     /* Async */

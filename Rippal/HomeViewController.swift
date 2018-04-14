@@ -36,8 +36,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
         
+        displayFacebookFriends()
+        
         // TODO: remove
         NSLog("HomeView Loaded")
+    }
+    
+    func displayFacebookFriends() {
+        FacebookHelper.sharedInstance.retrieveAllFriendsOnRippal { responseDict in
+            let friends = responseDict["data"] as! NSArray
+            NSLog("FB friends: \(friends)")
+            // TODO: filter friends
+        }
     }
 
     func setupCityName() {
