@@ -17,8 +17,11 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     var id: String?
     var location: String?
     var position: String?
+    var needCacheInfo: Bool = false
     
     var locationManager: CLLocationManager!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,9 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         UserHelper.sharedInstance.setLoggedIn(loggedIn: true)
-        if email != nil && firstName != nil && lastName != nil && id != nil && location != nil && position != nil {
-            UserHelper.sharedInstance.cacheUserInfo(email: email!, firstName: firstName!, lastName: lastName!, id: id!, location: location!, position: position!)
+        
+        if needCacheInfo {
+            UserHelper.sharedInstance.cacheUserInfo(email: email!, firstName: firstName!, lastName: lastName!, id: id!, location: location, position: position)
         } else {
             let infoArr: [String] = UserHelper.sharedInstance.loadUserInfo()
             email = infoArr[0]

@@ -123,7 +123,7 @@ class SignupViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NSLog("Preparing segue...")
+        NSLog("Preparing segue... for \(segue.identifier ?? "Unknown")")
         switch segue.identifier! {
         case "sw_signup_tab":
             let destinationVC = segue.destination as! TabBarController
@@ -133,6 +133,7 @@ class SignupViewController: UIViewController {
             destinationVC.id = id
             destinationVC.location = location
             destinationVC.position = position
+            destinationVC.needCacheInfo = true
             break
         default:
             break

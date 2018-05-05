@@ -39,7 +39,7 @@ final class UserHelper {
         currentVC.performSegue(withIdentifier: "sw_tab_entry", sender: sender)
     }
     
-    func cacheUserInfo(email: String, firstName: String, lastName: String, id: String, location: String, position: String) {
+    func cacheUserInfo(email: String, firstName: String, lastName: String, id: String, location: String?, position: String?) {
         UserDefaults.standard.set(email, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)
         UserDefaults.standard.set(firstName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)
         UserDefaults.standard.set(lastName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)
@@ -49,13 +49,14 @@ final class UserHelper {
     }
     
     func loadUserInfo() -> [String] {
+        // TODO: use localised strings instead
         var retArr: [String] = []
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)!)
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)!)
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)!)
         retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)!)
-        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_location")!)!)
-        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_position")!)!)
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_location")!) ?? "Unknown Location")
+        retArr.append(UserDefaults.standard.string(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_position")!) ?? "Unknown Position")
         return retArr
     }
     

@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func setupCityName() {
         let parentViewController: TabBarController = parent as! TabBarController
-        cityName.text = parentViewController.location!
+        cityName.text = parentViewController.location ?? ""
     }
     
     func setupFilterStackView() {

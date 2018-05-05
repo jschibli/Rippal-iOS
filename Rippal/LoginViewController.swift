@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NSLog("Preparing segue...")
+        NSLog("Preparing segue... for \(segue.identifier ?? "Unknown")")
         switch segue.identifier! {
         case "sw_login_tab":
             let destinationCV = segue.destination as! TabBarController
@@ -73,6 +73,7 @@ class LoginViewController: UIViewController {
             destinationCV.id = id
             destinationCV.location = location
             destinationCV.position = position
+            destinationCV.needCacheInfo = true
             break
         default:
             break
