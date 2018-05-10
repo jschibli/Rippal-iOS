@@ -16,7 +16,7 @@ final class FacebookHelper {
     
     private init() {}
     
-    func disconnect() {
+    func clearSession() {
         AccessToken.current = nil
     }
     

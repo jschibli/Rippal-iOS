@@ -49,7 +49,7 @@ final class UserHelper {
         LinkedInHelper.sharedInstance.clearSession()
         
         // Facebook
-        FacebookHelper.sharedInstance.disconnect()
+        FacebookHelper.sharedInstance.clearSession()
     }
     
     func loadUserInfo() -> [String] {
