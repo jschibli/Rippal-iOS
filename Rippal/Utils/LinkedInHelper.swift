@@ -50,6 +50,12 @@ final class LinkedInHelper {
         LISDKSessionManager.createSession(with: accessToken)
     }
     
+    func clearSession() {
+        LISDKSessionManager.clearSession()
+        UserDefaults.standard.setValue(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_value")!)
+        UserDefaults.standard.setValue(nil, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_session_access_token_expiration")!)
+    }
+    
     func getUserInfo(successBlock: @escaping (LISDKAPIResponse?) -> Void, errorBlock: @escaping (LISDKAPIError?) -> Void) {
         LISDKAPIHelper.sharedInstance().getRequest("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,location,positions)?format=json", success: successBlock, error: errorBlock)
     }

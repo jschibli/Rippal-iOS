@@ -14,8 +14,6 @@
 	<string>user_first_name</string>
 	<key>userdefaults_user_email</key>
 	<string>user_email</string>
-	<key>userdefaults_has_cached_avatar</key>
-	<string>has_cached_avatar</string>
 	<key>userdefaults_cached_avatar</key>
 	<string>cached_avatar</string>
 	<key>userdefaults_session_access_token_expiration</key>

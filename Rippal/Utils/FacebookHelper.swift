@@ -16,6 +16,10 @@ final class FacebookHelper {
     
     private init() {}
     
+    func disconnect() {
+        AccessToken.current = nil
+    }
+    
     func isConnectedWithFacebook() -> Bool {
         return AccessToken.current != nil
     }

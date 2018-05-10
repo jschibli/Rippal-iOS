@@ -23,9 +23,6 @@ final class UserHelper {
     
     func setLoggedIn(loggedIn: Bool) {
         UserDefaults.standard.set(loggedIn, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_logged_in")!)
-        if !loggedIn {
-            UserDefaults.standard.set(false, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
-        }
     }
     
     func logout(currentVC: UIViewController, _ sender: Any) {
@@ -40,12 +37,19 @@ final class UserHelper {
     }
     
     func cacheUserInfo(email: String, firstName: String, lastName: String, id: String, location: String?, position: String?) {
+        // Local
         UserDefaults.standard.set(email, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_email")!)
         UserDefaults.standard.set(firstName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_first_name")!)
         UserDefaults.standard.set(lastName, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_last_name")!)
         UserDefaults.standard.set(id, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_id")!)
         UserDefaults.standard.set(location, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_location")!)
         UserDefaults.standard.set(position, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_user_position")!)
+        
+        // Linkedin
+        LinkedInHelper.sharedInstance.clearSession()
+        
+        // Facebook
+        FacebookHelper.sharedInstance.disconnect()
     }
     
     func loadUserInfo() -> [String] {
@@ -61,7 +65,7 @@ final class UserHelper {
     }
     
     func hasCachedAvatar() -> Bool {
-        return UserDefaults.standard.bool(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
+        return UserDefaults.standard.data(forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_cached_avatar")!) != nil
     }
     
     func loadCachedAvatar() -> UIImage {
@@ -73,7 +77,6 @@ final class UserHelper {
     func saveAvatarCache(_ image: UIImage) {
         let data: Data = UIImageJPEGRepresentation(image, 1.0)!
         UserDefaults.standard.set(data, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_cached_avatar")!)
-        UserDefaults.standard.set(true, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_has_cached_avatar")!)
     }
     
     /* Async */
