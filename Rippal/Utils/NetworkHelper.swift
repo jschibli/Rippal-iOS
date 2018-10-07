@@ -68,6 +68,21 @@ final class NetworkHelper {
             .response(completionHandler: completionHandler)
     }
     
+    func updateSocialNetworkToken(liToken: String, fbToken: String) {
+        let params:[String: Any] = [
+            "liToken": liToken,
+            "fbToken": fbToken,
+        ]
+        manager.request(Constants.paths.base_url + Constants.paths.update_token, method: .put, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .response { (response) in
+                if response.response?.statusCode != 200 {
+                    NSLog("Update Token Response Error: \(String(describing: response.response))")
+                }
+        }
+    }
+    
     func signUp(email: String, password: String, firstName: String, lastName: String, id: String, location: String, position: String, completionHandler: @escaping (DefaultDataResponse) -> Void) {
         let params:[String: String] = [
             "email": email,
@@ -90,6 +105,17 @@ final class NetworkHelper {
             "password": password
         ]
         manager.request(Constants.paths.base_url + Constants.paths.login, method: .post, parameters: params, encoding: URLEncoding.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .response(completionHandler: completionHandler)
+    }
+    
+    func getNearbyFriends(email: String, distance: Int, completionHandler: @escaping (DefaultDataResponse) -> Void) {
+        let params:[String: Any] = [
+            "email": email,
+            "distance": distance
+        ]
+        manager.request(Constants.paths.base_url + Constants.paths.nearby, method: .get, parameters: params, encoding: URLEncoding.default)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .response(completionHandler: completionHandler)

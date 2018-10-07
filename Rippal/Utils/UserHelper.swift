@@ -75,7 +75,7 @@ final class UserHelper {
     }
     
     func saveAvatarCache(_ image: UIImage) {
-        let data: Data = UIImageJPEGRepresentation(image, 1.0)!
+        let data: Data = image.jpegData(compressionQuality: 1.0)!
         UserDefaults.standard.set(data, forKey: StringHelper.sharedInstance.getKey(key: "userdefaults_cached_avatar")!)
     }
     

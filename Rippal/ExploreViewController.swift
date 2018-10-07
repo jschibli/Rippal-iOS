@@ -70,20 +70,20 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Add a blur effect to background
         let blackMaskView = UIView(frame: self.view.frame)
         blackMaskView.tag = 0x26
-        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffect.Style.dark))
         blurEffectView.frame = self.view.bounds
         blackMaskView.addSubview(blurEffectView)
         self.view.addSubview(blackMaskView)
         
         let singleCityVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SingleCityVC") as! SingleCityViewController
-        self.addChildViewController(singleCityVC)
+        self.addChild(singleCityVC)
         let inset = CGFloat(40)
         singleCityVC.view.frame = CGRect(x: inset, y: inset, width: self.view.frame.width - inset * 2, height: self.view.frame.height - inset * 3)
         singleCityVC.view.layer.cornerRadius = singleCityVC.view.frame.height / 20
         singleCityVC.view.layer.masksToBounds = false
         singleCityVC.view.clipsToBounds = true
         self.view.insertSubview(singleCityVC.view, aboveSubview: blackMaskView)
-        singleCityVC.didMove(toParentViewController: self)
+        singleCityVC.didMove(toParent: self)
     }
     
     @objc func dismissKeyboard() {

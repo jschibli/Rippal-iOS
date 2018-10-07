@@ -27,11 +27,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-        store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "XPDyOJeDY2", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, company: "Rippal LLC", location: "Glens Falls, New York", name: "Tao Peter Wang"))
-        store.loadConnections {
-            self.tableView.reloadData()
-        }
-                
+//        store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "XPDyOJeDY2", email: "peterwangtao0@hotmail.com", lat: 122.4194, lng: 37.7749, company: "Rippal LLC", location: "Glens Falls, New York", name: "Tao Peter Wang"))
+//        store.loadConnections {
+//            self.tableView.reloadData()
+//        }
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -43,11 +43,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func displayFacebookFriends() {
-        FacebookHelper.sharedInstance.retrieveAllFriendsOnRippal { responseDict in
-            let friends = responseDict["data"] as! NSArray
-            NSLog("FB friends: \(friends)")
-            // TODO: filter friends
-        }
+        NetworkHelper.sharedInstance.getNearbyFriends(email: "peterwangtao0@hotmail.com", distance: 10000, completionHandler: { response in
+            if response.response?.statusCode == 200 {
+                do {
+                    NSLog("Friends: " + String(data: response.data!, encoding: .utf8)!)
+                    let json = try JSONSerialization.jsonObject(with: response.data!, options: []) as! [String: AnyObject]
+                    let users = json["users"] as! [[String: Any]]
+                    
+                    for user in users {
+                        self.store.connections.append(Connection(profilePhoto: #imageLiteral(resourceName: "pf_generic_avatar"), linkedInId: "XPDyOJeDY2", email: user["email"] as! String, lat: user["latitude"] as! Double, lng: user["longitude"] as! Double, company: "Unknown", location: "", name: (user["firstName"] as! String) + " " + (user["lastName"] as! String)))
+                    }
+                    self.store.loadConnections {
+                        self.tableView.reloadData()
+                    }
+                } catch {
+                    NSLog("Error reading nearby friends")
+                }
+            }
+        })
     }
 
     func setupCityName() {

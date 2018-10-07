@@ -45,30 +45,30 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !LinkedInHelper.sharedInstance.hasSession() {
-            // TODO: use localised strings instead
-            var actions: [UIAlertAction] = []
-            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
-            actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
-                DispatchQueue.main.async {
-                    LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
-                        let session = LISDKSessionManager.sharedInstance().session!
-                        LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
-                    }, errorBlock: { error in
-                        // Do nothing
-                    })
-                }
-            }))
-            NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
-            selectedIndex = 3
-            if let items = self.tabBarController?.tabBar.items {
-                for i in 0 ..< items.count {
-                    let itemToDisable = items[i]
-                    itemToDisable.isEnabled = false
-                }
-            }
-            return
-        }
+//        if !LinkedInHelper.sharedInstance.hasSession() {
+//            // TODO: use localised strings instead
+//            var actions: [UIAlertAction] = []
+//            actions.append(UIAlertAction(title: "OK", style: .`default`, handler: nil))
+//            actions.append(UIAlertAction(title: "Refresh", style: .`default`, handler: { action in
+//                DispatchQueue.main.async {
+//                    LinkedInHelper.sharedInstance.newSession(successBlock: { returnState in
+//                        let session = LISDKSessionManager.sharedInstance().session!
+//                        LinkedInHelper.sharedInstance.setSessionAccessToken(accessToken: session.accessToken)
+//                    }, errorBlock: { error in
+//                        // Do nothing
+//                    })
+//                }
+//            }))
+//            NotificationHelper.sharedInstance.showAlert(title: "LinkedIn not connected", message: "You need to connect to your LinkedIn profile to use Rippal", actions: actions, context: self)
+//            selectedIndex = 3
+//            if let items = self.tabBarController?.tabBar.items {
+//                for i in 0 ..< items.count {
+//                    let itemToDisable = items[i]
+//                    itemToDisable.isEnabled = false
+//                }
+//            }
+//            return
+//        }
         
         if !FacebookHelper.sharedInstance.isConnectedWithFacebook() {
             // TODO: use localised strings instead
@@ -137,12 +137,12 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
             var actions: [UIAlertAction] = [];
             // TODO: localization for the notification
             actions.append(UIAlertAction(title: "Go to Settings", style: .`default`) { (_) -> Void in
-                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                     return
                 }
                 
                 if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl, options: [:], completionHandler: { (_) in
+                    UIApplication.shared.open(settingsUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (_) in
                         // Exit application
                         NotificationHelper.sharedInstance.showAlert(title: "Need location permission", message: "Please enable location permission for basic Rippal functionalities", actions: actions, context: self.selectedViewController!)
                         // Stop all functionalities
@@ -162,12 +162,12 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
                 // TODO: localization for the notification
                 actions.append(UIAlertAction(title: "Got it", style: .`default`, handler: nil))
                 actions.append(UIAlertAction(title: "Settings", style: .`default`) { (_) -> Void in
-                    guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         return
                     }
                     
                     if UIApplication.shared.canOpenURL(settingsUrl) {
-                        UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(settingsUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     }
                 })
                 NotificationHelper.sharedInstance.showAlert(title: "Need location permission", message: "Please enable location permission in 'Settings', or Rippal cannot function properly", actions: actions, context: self.selectedViewController!)
@@ -180,4 +180,9 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         }
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
